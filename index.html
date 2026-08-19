@@ -86,10 +86,8 @@
 
       <!-- Dispatch Notice, Live Status & Language Switcher -->
       <div class="flex items-center gap-4">
-        <!-- Live Status Pill in Header -->
-        <div id="topBarStatusPill" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold">
-          <!-- Populated by JS -->
-        </div>
+        <!-- Live Status Pill -->
+        <div id="topBarStatusPill" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold"></div>
 
         <span class="hidden md:inline text-stone-300 text-[11px] font-medium" data-i18n="topBarDelivery">
           ✨ استلام فوري من فرع بريدة • شحن مبرد ومحكم لكافة مدن المملكة
@@ -138,7 +136,7 @@
           <span id="cartBadge" class="absolute -top-1 -right-1 bg-brand-burgundy text-white font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center hidden font-sans shadow">0</span>
         </button>
 
-        <!-- WhatsApp Quick Link (Flow 1: General Inquiry) -->
+        <!-- WhatsApp Quick Link (General Inquiry) -->
         <button onclick="sendWhatsAppMessage('general')" class="hidden sm:inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold py-2.5 px-4 rounded-full shadow-sm hover:shadow transition-all">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
           <span data-i18n="navWhatsApp">طلب خاص عبر الواتساب</span>
@@ -153,7 +151,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left: Editorial Storytelling -->
+        <!-- Left: Storytelling -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-start">
           <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-amber-950 text-xs font-bold">
             <i data-lucide="award" class="w-3.5 h-3.5 text-brand-gold"></i>
@@ -199,19 +197,19 @@
           </div>
         </div>
 
-        <!-- Right: Signature Showcase Frame -->
+        <!-- Right: Signature Platter Showcase with ror3.jpg -->
         <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-md bg-white p-5 sm:p-6 rounded-3xl shadow-xl border border-stone-200/80">
-            <div class="h-64 rounded-2xl bg-gradient-to-br from-stone-100 via-brand-sand to-stone-200 border border-stone-200 flex flex-col items-center justify-center p-6 text-center">
-              <div class="w-20 h-20 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold mb-3 shadow-inner">
-                <i data-lucide="gift" class="w-10 h-10"></i>
+          <div class="relative mx-auto max-w-md bg-white p-4 sm:p-5 rounded-3xl shadow-xl border border-stone-200/80">
+            <div class="h-64 rounded-2xl overflow-hidden relative group">
+              <img src="ror3.jpg" alt="صينية ضيافة القصور الملكية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent flex flex-col justify-end p-5 text-white">
+                <span class="bg-brand-gold text-stone-950 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider font-sans self-start mb-1.5">Signature Platter</span>
+                <h3 class="font-extrabold text-white text-base leading-tight" data-i18n="heroCardTitle">صينية القصور الملكية المشكلة</h3>
+                <p class="text-[11px] text-stone-300 mt-1 line-clamp-2" data-i18n="heroCardDesc">توليفة حصرية من معمول التمر المنقوش، أوراق الفستق المقرمشة، وترافل الشوكولاتة الفاخرة.</p>
               </div>
-              <span class="bg-brand-obsidian text-brand-goldLight text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider font-sans mb-1.5">Bespoke Collection</span>
-              <h3 class="font-extrabold text-stone-900 text-lg" data-i18n="heroCardTitle">صينية القصور المذهبة</h3>
-              <p class="text-xs text-stone-500 mt-1 max-w-xs leading-relaxed" data-i18n="heroCardDesc">توليفة حصرية من معمول التمر المنقوش، أوراق الفستق المقرمشة، وترافل الشوكولاتة مع شريط حريري وبطاقة إهداء مخصصة.</p>
             </div>
 
-            <div class="flex items-center justify-between pt-4">
+            <div class="flex items-center justify-between pt-4 px-1">
               <div>
                 <span class="text-[10px] text-stone-400 uppercase font-bold block" data-i18n="priceStarting">تبدأ من</span>
                 <span class="text-xl font-black text-stone-900 font-sans">65 <span class="text-xs font-arabic font-normal" data-i18n="currency">ريال</span></span>
@@ -301,10 +299,8 @@
               </div>
             </div>
 
-            <!-- Pastries list -->
-            <div class="grid sm:grid-cols-2 gap-3" id="builderItemsContainer">
-              <!-- Rendered via JS -->
-            </div>
+            <!-- Pastries list with actual photography thumbnails -->
+            <div class="grid sm:grid-cols-2 gap-3" id="builderItemsContainer"></div>
           </div>
 
           <!-- STEP 3: Silk Ribbon & Personal Card -->
@@ -357,7 +353,7 @@
               <span data-i18n="btnAddToCartBox">إضافة الصينية إلى السلة</span>
             </button>
 
-            <!-- Flow 4: Bespoke Box Direct Order -->
+            <!-- Bespoke Box Direct Order -->
             <button onclick="orderCustomBoxDirectWhatsApp()" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold py-3 rounded-xl transition-all shadow">
               <i data-lucide="message-circle" class="w-4 h-4"></i>
               <span data-i18n="btnDirectWhatsAppBox">طلب فوري عبر الواتساب</span>
@@ -382,13 +378,11 @@
       <button onclick="filterCatalogue('all')" class="cat-btn active px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-brand-obsidian text-white shadow" data-cat="all" data-i18n="catAll">الكل</button>
       <button onclick="filterCatalogue('classic')" class="cat-btn px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-cat="classic" data-i18n="catClassic">معمول التمر</button>
       <button onclick="filterCatalogue('pistachio')" class="cat-btn px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-cat="pistachio" data-i18n="catPistachio">الفستق والمكسرات</button>
-      <button onclick="filterCatalogue('truffles')" class="cat-btn px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-cat="truffles" data-i18n="catTruffles">الترافل والشوكولاتة</button>
+      <button onclick="filterCatalogue('platters')" class="cat-btn px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-cat="platters" data-i18n="catPlatters">الصواني والبوكسات</button>
     </div>
 
-    <!-- Products Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="catalogueGrid">
-      <!-- Injected via JS -->
-    </div>
+    <!-- Products Grid (Renders actual 6 image cards) -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="catalogueGrid"></div>
   </section>
 
   <!-- ================= REVIEWS & LOCATION & HOURS (GOOGLE MAPS) ================= -->
@@ -453,9 +447,7 @@
               </div>
 
               <!-- Dynamic Real-Time Open/Closed Badge -->
-              <div id="liveStatusBadge" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold">
-                <!-- Injected via JavaScript -->
-              </div>
+              <div id="liveStatusBadge" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold"></div>
             </div>
 
             <!-- Operating Hours Schedule Table -->
@@ -469,9 +461,7 @@
               </div>
 
               <!-- Weekly Schedule Grid -->
-              <div class="grid sm:grid-cols-2 gap-2 text-xs" id="scheduleDisplayList">
-                <!-- Injected dynamically to highlight current day -->
-              </div>
+              <div class="grid sm:grid-cols-2 gap-2 text-xs" id="scheduleDisplayList"></div>
             </div>
 
             <!-- Visual Map Button -->
@@ -524,9 +514,7 @@
     </div>
 
     <!-- Items Container -->
-    <div class="flex-1 p-5 overflow-y-auto space-y-4 custom-scrollbar" id="cartItemsList">
-      <!-- Injected via JS -->
-    </div>
+    <div class="flex-1 p-5 overflow-y-auto space-y-4 custom-scrollbar" id="cartItemsList"></div>
 
     <!-- Footer Checkout -->
     <div class="p-5 border-t border-stone-200 bg-brand-cream space-y-4">
@@ -540,7 +528,7 @@
         <span class="text-2xl font-black text-stone-900 font-sans" id="cartTotalSum">0 <span class="text-xs font-arabic font-normal" data-i18n="currency">ريال</span></span>
       </div>
 
-      <!-- Flow 5: Full Cart Invoice Order -->
+      <!-- Full Cart Invoice Order -->
       <button onclick="checkoutWhatsApp()" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold py-3.5 px-6 rounded-2xl shadow-lg transition-all text-sm">
         <i data-lucide="message-circle" class="w-5 h-5"></i>
         <span data-i18n="btnCheckoutWhatsApp">إرسال الطلب عبر الواتساب (+966506943096)</span>
@@ -592,7 +580,6 @@
     const BUSINESS_PHONE = "966506943096";
 
     // Schedule Definition
-    // 0: Sun, 1: Mon, 2: Tue, 3: Wed, 4: Thu, 5: Fri, 6: Sat
     const storeHours = {
       0: { nameAr: "الأحد", nameEn: "Sunday", open: 9, close: 17, formattedAr: "9:00 ص – 5:00 م", formattedEn: "9:00 AM – 5:00 PM" },
       1: { nameAr: "الإثنين", nameEn: "Monday", open: 11, close: 17, formattedAr: "11:00 ص – 5:00 م", formattedEn: "11:00 AM – 5:00 PM" },
@@ -627,7 +614,6 @@
 
     // 2. WHATSAPP MULTI-CONTEXT DISPATCHER
     function sendWhatsAppMessage(type, data = {}) {
-      const status = getStoreStatus();
       let msg = "";
 
       switch (type) {
@@ -738,8 +724,8 @@
         metricReview: "تقييم خرائط Google",
         metricDates: "خلاص القصيم الفاخر",
         metricSupport: "خدمة مباشرة",
-        heroCardTitle: "صينية القصور المذهبة",
-        heroCardDesc: "توليفة حصرية من معمول التمر المنقوش، أوراق الفستق المقرمشة، وترافل الشوكولاتة مع شريط حريري وبطاقة إهداء مخصصة.",
+        heroCardTitle: "صينية القصور الملكية المشكلة",
+        heroCardDesc: "توليفة حصرية من معمول التمر المنقوش، أوراق الفستق المقرمشة، وترافل الشوكولاتة الفاخرة.",
         priceStarting: "تبدأ من",
         currency: "ريال",
         heroCardAction: "تخصيص الصينية",
@@ -772,7 +758,7 @@
         catAll: "الكل",
         catClassic: "معمول التمر",
         catPistachio: "الفستق والمكسرات",
-        catTruffles: "الترافل والشوكولاتة",
+        catPlatters: "الصواني والبوكسات",
         locationBuraydah: "بريدة • حي الصفراء • شارع أوس بن ثابت",
         reviewHeading: "تقييم 4.8★ على خرائط Google",
         reviewPraise1: '"أفضل معمول هش ولذيذ بالتمر والفستق في بريدة، التقديم يرفع الراس في كل مناسبة."',
@@ -814,8 +800,8 @@
         metricReview: "Google Maps Rating",
         metricDates: "Select Kholas Dates",
         metricSupport: "Concierge Service",
-        heroCardTitle: "Imperial Palace Platter",
-        heroCardDesc: "A masterwork assortment of crimped date ma'amoul, pistachio leaves, and chocolate truffles with satin ribbons and personalized calligraphy card.",
+        heroCardTitle: "Imperial Hospitality Pastry Platter",
+        heroCardDesc: "A masterwork assortment of crimped date ma'amoul, pistachio leaves, and gourmet date sweets.",
         priceStarting: "Starts at",
         currency: "SAR",
         heroCardAction: "Customize Platter",
@@ -848,7 +834,7 @@
         catAll: "All",
         catClassic: "Date Ma'amoul",
         catPistachio: "Pistachio & Nuts",
-        catTruffles: "Truffles & Chocolate",
+        catPlatters: "Trays & Gift Boxes",
         locationBuraydah: "Buraydah • Al Safra • Aws Ibn Thabit St",
         reviewHeading: "4.8★ Rated on Google Maps",
         reviewPraise1: '"The most delicate date and pistachio ma\'amoul in Buraydah. A truly prestigious presentation."',
@@ -874,21 +860,83 @@
       }
     };
 
-    // 4. PRODUCT & BUILDER DATA
+    // 4. PRECISE PRODUCT DATA WITH EXACT 6 IMAGES & NAMES
     const pastries = [
-      { id: 'p1', nameAr: "معمول التمر المنقوش", nameEn: "Hand-Crimped Date Ma'amoul", tagAr: 'خلاص القصيم', tagEn: 'Qassim Dates' },
-      { id: 'p2', nameAr: "معمول أوراق الفستق الحلبي", nameEn: "Aleppo Pistachio Leaf", tagAr: 'فستق حلبي', tagEn: 'Green Pistachio' },
-      { id: 'p3', nameAr: "معمول السكر الناعم الكروي", nameEn: "Powdered Sugar Sphere", tagAr: 'سكر ناعم', tagEn: 'Velvet Sugar' },
-      { id: 'p4', nameAr: "ميني معمول بوندت مموج", nameEn: "Fluted Bundt Date Bite", tagAr: 'ميني بايتس', tagEn: 'Mini Pastry' },
-      { id: 'p5', nameAr: "ترافل التمر بالشوكولاتة الداكنة", nameEn: "Dark Chocolate Date Truffle", tagAr: 'شوكولاتة داكنة', tagEn: 'Dark Truffle' },
-      { id: 'p6', nameAr: "تارت المعمول المذهب بالهيل", nameEn: "Cardamom & Date Glazed Cup", tagAr: 'هيل وزعفران', tagEn: 'Cardamom Infused' }
+      { id: 'p1', nameAr: "معمول التمر المنقوش التراثي", nameEn: "Traditional Hand-Crimped Date Ma'amoul", tagAr: 'خلاص القصيم', tagEn: 'Qassim Dates', img: 'ror4.jpg' },
+      { id: 'p2', nameAr: "معمول بتلات الفستق والتمر", nameEn: "Leaf-Crimped & Pistachio Ma'amoul", tagAr: 'فستق حلبي', tagEn: 'Green Pistachio', img: 'معمول2.jpg' },
+      { id: 'p3', nameAr: "معمول السكر الناعم الكروي", nameEn: "Powdered Sugar Date Spheres", tagAr: 'سكر ناعم', tagEn: 'Velvet Sugar', img: 'ror-1.jpg' },
+      { id: 'p4', nameAr: "كؤوس تارت المعمول المذهب بالهيل", nameEn: "Golden Glazed Cardamom Date Cups", tagAr: 'هيل وزعفران', tagEn: 'Cardamom Infused', img: 'ror-2.jpg' },
+      { id: 'p5', nameAr: "ورود المعمول بالفستق الحلبي", nameEn: "Fluted Pistachio Floral Ma'amoul", tagAr: 'فستق مقرمش', tagEn: 'Pistachio Florets', img: 'ror6.jpg' },
+      { id: 'p6', nameAr: "صينية ضيافة القصور المشكلة", nameEn: "Imperial Hospitality Pastry Board", tagAr: 'تشكيلة ملكية', tagEn: 'Royal Selection', img: 'ror3.jpg' }
     ];
 
     const catalogue = [
-      { id: 201, nameAr: "معمول التمر الملكي التقليدي (نصف كيلو)", nameEn: "Royal Date Ma'amoul (500g)", price: 45, category: 'classic', descAr: "معمول هش ومحشو بأجود أنواع خلاص القصيم المعجون بالسمن النقي.", descEn: "Traditional melt-in-mouth pastry packed with pure date paste.", badge: "Signature" },
-      { id: 202, nameAr: "أوراق المعمول بالفستق الأخضر (علبة فاخرة)", nameEn: "Pistachio Leaf Boutique Box", price: 58, category: 'pistachio', descAr: "معمول على شكل أوراق شجر مغطاة بطبقة سخية من الفستق الحلبي.", descEn: "Artisanal leaf-shaped treats encrusted with crushed pistachios.", badge: "Best Seller" },
-      { id: 203, nameAr: "ترافل التمر بالشوكولاتة والمكسرات", nameEn: "Artisanal Chocolate Date Truffles", price: 65, category: 'truffles', descAr: "حبات تمر منتقاة مغطاة بالشوكولاتة البلجيكية ومحشوة بالجوز المحمص.", descEn: "Selected dates enrobed in fine chocolate and roasted nuts.", badge: "Luxury" },
-      { id: 204, nameAr: "ميني معمول مذهب للمناسبات (كيلو)", nameEn: "Mini Golden Celebration Tray (1kg)", price: 85, category: 'classic', descAr: "قطع ميني بتصميم البوندت المموج مثالية لضيافة الأعراس والمؤتمرات.", descEn: "Mini fluted date treats crafted specifically for banquets.", badge: "Party Size" }
+      { 
+        id: 301, 
+        nameAr: "معمول التمر المنقوش التراثي", 
+        nameEn: "Traditional Hand-Crimped Date Ma'amoul", 
+        price: 45, 
+        category: 'classic', 
+        descAr: "معمول هش بنقشة القالب التراثية محشو بأجود أنواع خلاص القصيم المعجون بالسمن النقي.", 
+        descEn: "Authentic wooden-mold date cookies made with pure clarified butter and Qassim date paste.", 
+        badge: "الأكثر طلباً • Best Seller",
+        img: "ror4.jpg" 
+      },
+      { 
+        id: 302, 
+        nameAr: "معمول بتلات الفستق والتمر بأكواب التقديم", 
+        nameEn: "Leaf-Crimped & Pistachio Ma'amoul Cups", 
+        price: 55, 
+        category: 'pistachio', 
+        descAr: "أقراص معمول رقيقة على شكل أوراق شجر مكللة بالفستق الحلبي ومرتبة بأكواب ورقية أنيقة للضيافة.", 
+        descEn: "Delicate leaf-crimped pastries encrusted with crushed green pistachios in individual presentation cups.", 
+        badge: "تشكيلة الضيافة • Signature Cups",
+        img: "معمول2.jpg" 
+      },
+      { 
+        id: 303, 
+        nameAr: "كرات معمول السكر المخملي الناعم", 
+        nameEn: "Powdered Sugar Date Spheres", 
+        price: 40, 
+        category: 'classic', 
+        descAr: "كرات معمول هشة غنية بحشوة التمر الكثيفة ومغطاة بسخاء برشة من السكر البودرة الناعم.", 
+        descEn: "Melt-in-mouth date pastry spheres generously dusted with fine powdered icing sugar.", 
+        badge: "هش وخفيف • Velvet Dust",
+        img: "ror-1.jpg" 
+      },
+      { 
+        id: 304, 
+        nameAr: "كؤوس تارت المعمول المذهب بالهيل", 
+        nameEn: "Golden Glazed Cardamom Date Cups", 
+        price: 50, 
+        category: 'classic', 
+        descAr: "أكواب معمول بقوام التارت الفاخر مع طبقة ملمعة ذهبية ونكهة هيل القصيم الزكية.", 
+        descEn: "Rich tart-style date pastries finished with a golden caramelized glaze and fragrant cardamom.", 
+        badge: "إصدار خاص • Golden Glaze",
+        img: "ror-2.jpg" 
+      },
+      { 
+        id: 305, 
+        nameAr: "ورود المعمول بالفستق الحلبي المقرمش", 
+        nameEn: "Fluted Pistachio Floral Ma'amoul", 
+        price: 52, 
+        category: 'pistachio', 
+        descAr: "حبات معمول بتصميم الوردة المتموجة والمزينة بحبات الفستق الأخضر الطازج لجمعاتكم الراقية.", 
+        descEn: "Scalloped flower-shaped bite-sized pastries topped with vibrant green crushed pistachios.", 
+        badge: "فاخر • Pistachio Florets",
+        img: "ror6.jpg" 
+      },
+      { 
+        id: 306, 
+        nameAr: "صينية ضيافة القصور الملكية المشكلة", 
+        nameEn: "Imperial Hospitality Pastry Board", 
+        price: 135, 
+        category: 'platters', 
+        descAr: "صينية تقديم فاخرة تجمع بتلات المعمول، أوراق الفستق، والمخبوزات التراثية المحشوة بالمكسرات.", 
+        descEn: "A comprehensive presentation platter curated with an assortment of artisanal ma'amoul, leaf pastries, and nut-filled sweets.", 
+        badge: "صينية متكاملة • Royal Platter",
+        img: "ror3.jpg" 
+      }
     ];
 
     // 5. STATE
@@ -964,7 +1012,7 @@
       const listContainer = document.getElementById('scheduleDisplayList');
       const status = getStoreStatus();
 
-      // Days array in presentation order: Wed (3), Thu (4), Fri (5), Sat (6), Sun (0), Mon (1), Tue (2)
+      // Wed (3), Thu (4), Fri (5), Sat (6), Sun (0), Mon (1), Tue (2)
       const order = [3, 4, 5, 6, 0, 1, 2];
 
       listContainer.innerHTML = order.map(dayIdx => {
@@ -1042,13 +1090,16 @@
         const tag = lang === 'ar' ? p.tagAr : p.tagEn;
 
         return `
-          <div class="flex items-center justify-between p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
-            <div>
-              <h4 class="text-xs font-extrabold text-stone-900">${name}</h4>
-              <span class="text-[10px] text-brand-gold font-bold block">${tag}</span>
+          <div class="flex items-center justify-between p-3 rounded-2xl bg-stone-50 border border-stone-200 hover:border-stone-300 transition-colors">
+            <div class="flex items-center gap-2.5">
+              <img src="${p.img}" alt="${name}" class="w-11 h-11 rounded-xl object-cover border border-stone-200 shadow-sm shrink-0" />
+              <div>
+                <h4 class="text-xs font-extrabold text-stone-900 line-clamp-1">${name}</h4>
+                <span class="text-[10px] text-brand-gold font-bold block">${tag}</span>
+              </div>
             </div>
             
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-1.5 shrink-0">
               <button onclick="modifyItemCount('${p.id}', -1)" class="w-7 h-7 rounded-lg bg-white border border-stone-300 text-stone-800 hover:bg-stone-100 flex items-center justify-center font-black text-xs transition-colors">
                 -
               </button>
@@ -1078,7 +1129,10 @@
         const name = lang === 'ar' ? p.nameAr : p.nameEn;
         return `
           <div class="flex justify-between items-center py-1.5 border-b border-stone-100">
-            <span class="text-stone-800 font-medium">${name}</span>
+            <div class="flex items-center gap-2">
+              <img src="${p.img}" alt="${name}" class="w-6 h-6 rounded object-cover" />
+              <span class="text-stone-800 font-medium">${name}</span>
+            </div>
             <span class="font-black font-sans text-brand-burgundy">× ${qty}</span>
           </div>
         `;
@@ -1129,7 +1183,7 @@
       });
     }
 
-    // 9. CATALOGUE HANDLERS
+    // 9. CATALOGUE GRID RENDERING (WITH EXACT 6 PHOTOS)
     function renderCatalogueGrid(items) {
       const grid = document.getElementById('catalogueGrid');
       grid.innerHTML = items.map(p => {
@@ -1138,16 +1192,19 @@
 
         return `
           <div class="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-            <div class="h-44 bg-gradient-to-br from-stone-100 to-brand-sand/60 flex items-center justify-center p-6 relative">
-              <div class="w-16 h-16 rounded-full bg-brand-gold/15 flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
-                <i data-lucide="cookie" class="w-8 h-8"></i>
-              </div>
-              <span class="absolute top-3 right-3 bg-brand-obsidian text-brand-goldLight text-[10px] font-extrabold px-2.5 py-1 rounded-full font-sans">${p.badge}</span>
+            
+            <!-- Real Product Photography -->
+            <div class="h-52 overflow-hidden relative bg-stone-100">
+              <img src="${p.img}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute top-3 right-3 bg-brand-obsidian/90 backdrop-blur-sm text-brand-goldLight text-[10px] font-extrabold px-3 py-1 rounded-full font-sans border border-brand-gold/20 shadow">
+                ${p.badge}
+              </span>
             </div>
 
+            <!-- Product Card Details -->
             <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
               <div>
-                <h3 class="font-extrabold text-stone-900 text-sm leading-snug">${name}</h3>
+                <h3 class="font-extrabold text-stone-900 text-base leading-snug">${name}</h3>
                 <p class="text-stone-500 text-xs mt-1.5 leading-relaxed line-clamp-2">${desc}</p>
               </div>
 
@@ -1158,10 +1215,10 @@
                 </div>
                 
                 <div class="flex items-center gap-1.5">
-                  <button onclick="addToCartSingle(${p.id})" class="p-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 transition-colors" title="${translations[lang].btnAddCart}">
+                  <button onclick="addToCartSingle(${p.id})" class="p-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 transition-colors" title="${translations[lang].btnAddCart}">
                     <i data-lucide="plus" class="w-4 h-4"></i>
                   </button>
-                  <button onclick="instantBuy(${p.id})" class="inline-flex items-center gap-1 bg-stone-900 hover:bg-brand-gold text-white hover:text-stone-950 text-xs font-extrabold px-3 py-2 rounded-lg transition-colors">
+                  <button onclick="instantBuy(${p.id})" class="inline-flex items-center gap-1.5 bg-stone-900 hover:bg-brand-gold text-white hover:text-stone-950 text-xs font-extrabold px-3.5 py-2.5 rounded-xl transition-colors">
                     <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
                     <span>${translations[lang].btnBuyNow}</span>
                   </button>
@@ -1208,7 +1265,8 @@
           nameAr: prod.nameAr,
           nameEn: prod.nameEn,
           price: prod.price,
-          qty: 1
+          qty: 1,
+          img: prod.img
         });
       }
 
@@ -1303,10 +1361,13 @@
 
         return `
           <div class="p-3 bg-white rounded-2xl border border-stone-200 shadow-sm space-y-2">
-            <div class="flex justify-between items-start">
-              <div>
-                <h4 class="font-bold text-xs text-stone-900">${name}</h4>
-                <span class="text-[11px] text-brand-gold font-sans font-bold">${item.price} ${translations[lang].currency}</span>
+            <div class="flex justify-between items-start gap-2">
+              <div class="flex items-center gap-2">
+                ${item.img ? `<img src="${item.img}" alt="${name}" class="w-10 h-10 rounded-lg object-cover border border-stone-200 shrink-0" />` : ''}
+                <div>
+                  <h4 class="font-bold text-xs text-stone-900">${name}</h4>
+                  <span class="text-[11px] text-brand-gold font-sans font-bold">${item.price} ${translations[lang].currency}</span>
+                </div>
               </div>
               <button onclick="removeCartItem('${item.cartId}')" class="text-stone-300 hover:text-red-600 transition-colors p-1">
                 <i data-lucide="trash-2" class="w-4 h-4"></i>
@@ -1373,7 +1434,6 @@
 
       applyLang();
 
-      // Refresh real-time open status every 60 seconds
       setInterval(() => {
         renderLiveStatus();
       }, 60000);
