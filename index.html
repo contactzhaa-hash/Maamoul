@@ -2,16 +2,16 @@
 <html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>معمول | Ma'amoul — Haute Confectionery & Bespoke Gifting</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts: Cairo, Cinzel, Plus Jakarta Sans -->
+  <!-- Google Fonts: Cairo, Cinzel, Plus Jakarta Sans, Tajawal -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@700;900&display=swap" rel="stylesheet">
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -31,11 +31,14 @@
               cream: '#FAF7F2',
               sand: '#F3EDE2',
               cardBg: '#FFFFFF',
-              burgundy: '#6E1E2C'
+              burgundy: '#8E162D',
+              plum: '#342238',
+              lilac: '#EDE7F2',
+              olive: '#5E6350'
             }
           },
           fontFamily: {
-            arabic: ['Cairo', 'sans-serif'],
+            arabic: ['Cairo', 'Tajawal', 'sans-serif'],
             display: ['Cinzel', 'serif'],
             sans: ['Plus Jakarta Sans', 'sans-serif']
           }
@@ -49,6 +52,7 @@
       background-color: #FAF7F2;
       color: #161412;
       overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
     }
     
     .gold-gradient-text {
@@ -58,7 +62,8 @@
     }
 
     .custom-scrollbar::-webkit-scrollbar {
-      width: 5px;
+      width: 4px;
+      height: 4px;
     }
     .custom-scrollbar::-webkit-scrollbar-track {
       background: #F3EDE2;
@@ -67,34 +72,33 @@
       background: #C5A059;
       border-radius: 9999px;
     }
+
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 1rem);
+    }
   </style>
 </head>
-<body class="bg-brand-cream text-brand-dark antialiased font-arabic selection:bg-brand-gold selection:text-brand-obsidian">
+<body class="bg-brand-cream text-brand-dark antialiased font-arabic selection:bg-brand-gold selection:text-brand-obsidian pb-24 md:pb-0">
 
-  <!-- ================= TOP LUXURY STATUS BAR ================= -->
-  <aside class="bg-brand-obsidian text-stone-300 text-xs py-2.5 px-4 border-b border-stone-800 relative z-30">
-    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+  <!-- ================= TOP STATUS BAR ================= -->
+  <aside class="bg-brand-obsidian text-stone-300 text-xs py-2 px-3 sm:px-4 border-b border-stone-800 relative z-30">
+    <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
       
       <!-- Google Review Badge -->
-      <a href="https://maps.app.goo.gl/YVJ99SZrpyWbYANx6" target="_blank" class="inline-flex items-center gap-1.5 hover:text-brand-goldLight transition-colors group">
+      <a href="https://maps.app.goo.gl/YVJ99SZrpyWbYANx6" target="_blank" class="inline-flex items-center gap-1.5 hover:text-brand-goldLight transition-colors shrink-0">
         <span class="flex text-amber-400">
-          <i data-lucide="star" class="w-3 h-3 fill-amber-400"></i>
+          <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
         </span>
         <span class="font-bold text-white font-sans text-xs">4.8</span>
-        <span class="text-stone-400 group-hover:text-stone-300 transition-colors" data-i18n="topBarReview">على خرائط Google • تقييم ممتاز</span>
+        <span class="text-stone-400 text-[11px] sm:text-xs" data-i18n="topBarReview">على خرائط Google • تقييم ممتاز</span>
       </a>
 
-      <!-- Dispatch Notice, Live Status & Language Switcher -->
-      <div class="flex items-center gap-4">
-        <!-- Live Status Pill in Header -->
-        <div id="topBarStatusPill" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold"></div>
+      <!-- Actions & Language Switcher -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div id="topBarStatusPill" class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold"></div>
 
-        <span class="hidden md:inline text-stone-300 text-[11px] font-medium" data-i18n="topBarDelivery">
-          ✨ استلام فوري من فرع بريدة • شحن مبرد ومحكم لكافة مدن المملكة
-        </span>
-        
-        <button onclick="toggleLanguage()" class="flex items-center gap-1.5 bg-stone-900 hover:bg-stone-800 text-brand-goldLight text-xs font-bold px-3 py-1 rounded-full border border-stone-700 transition-all font-sans">
-          <i data-lucide="globe" class="w-3.5 h-3.5 text-brand-gold"></i>
+        <button onclick="toggleLanguage()" class="flex items-center gap-1 bg-stone-900 hover:bg-stone-800 text-brand-goldLight text-[11px] font-bold px-2.5 py-1 rounded-full border border-stone-700 transition-all font-sans active:scale-95">
+          <i data-lucide="globe" class="w-3 h-3 text-brand-gold"></i>
           <span id="langBtnText">English</span>
         </button>
       </div>
@@ -104,20 +108,20 @@
 
   <!-- ================= NAVIGATION ================= -->
   <nav class="sticky top-0 z-30 bg-brand-cream/95 backdrop-blur-md border-b border-stone-200/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
       
       <!-- Brand Emblem -->
-      <a href="#" class="flex items-center gap-3.5 group">
-        <div class="w-11 h-11 rounded-full bg-brand-obsidian flex items-center justify-center text-brand-gold font-display font-black text-xl shadow-md border border-brand-gold/40 group-hover:scale-105 transition-transform">
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3.5 group">
+        <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-brand-obsidian flex items-center justify-center text-brand-gold font-display font-black text-lg sm:text-xl shadow-md border border-brand-gold/40 group-active:scale-95 transition-transform">
           R
         </div>
         <div>
-          <h1 class="text-2xl font-black tracking-tight text-brand-dark font-arabic leading-none" data-i18n="brandTitle">معمول</h1>
-          <p class="text-[9px] text-stone-500 uppercase tracking-widest font-sans font-bold mt-1" data-i18n="brandSubtitle">Haute Confectionery & Gifts</p>
+          <h1 class="text-xl sm:text-2xl font-black tracking-tight text-brand-dark font-arabic leading-none" data-i18n="brandTitle">معمول</h1>
+          <p class="text-[8px] sm:text-[9px] text-stone-500 uppercase tracking-widest font-sans font-bold mt-0.5" data-i18n="brandSubtitle">Haute Confectionery & Gifts</p>
         </div>
       </a>
 
-      <!-- Desktop Navigation -->
+      <!-- Desktop Navigation Links -->
       <div class="hidden md:flex items-center gap-8 text-xs font-extrabold text-stone-700 uppercase tracking-wider">
         <a href="#hero" class="hover:text-brand-gold transition-colors" data-i18n="navHome">الرئيسية</a>
         <a href="#giftBuilder" class="hover:text-brand-gold transition-colors text-brand-burgundy flex items-center gap-1.5" data-i18n="navBuilder">
@@ -128,16 +132,16 @@
         <a href="#reviewsLocation" class="hover:text-brand-gold transition-colors" data-i18n="navLocation">الفرع والمواعيد</a>
       </div>
 
-      <!-- Actions -->
-      <div class="flex items-center gap-3">
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3">
         <!-- Cart Trigger -->
-        <button onclick="toggleCart(true)" class="relative p-2.5 rounded-full bg-white hover:bg-stone-100 border border-stone-200 text-stone-800 shadow-sm transition-all" title="View Cart">
-          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-          <span id="cartBadge" class="absolute -top-1 -right-1 bg-brand-burgundy text-white font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center hidden font-sans shadow">0</span>
+        <button onclick="toggleCart(true)" class="relative p-2 sm:p-2.5 rounded-full bg-white hover:bg-stone-100 border border-stone-200 text-stone-800 shadow-sm active:scale-95 transition-all" title="View Cart">
+          <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          <span id="cartBadge" class="absolute -top-1 -right-1 bg-brand-burgundy text-white font-bold text-[9px] sm:text-[10px] w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center hidden font-sans shadow">0</span>
         </button>
 
-        <!-- WhatsApp Quick Link (Flow 1: General Inquiry) -->
-        <button onclick="sendWhatsAppMessage('general')" class="hidden sm:inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold py-2.5 px-4 rounded-full shadow-sm hover:shadow transition-all">
+        <!-- WhatsApp Quick Link (Desktop) -->
+        <button onclick="sendWhatsAppMessage('general')" class="hidden sm:inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold py-2.5 px-4 rounded-full shadow-sm hover:shadow active:scale-95 transition-all">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
           <span data-i18n="navWhatsApp">طلب خاص عبر الواتساب</span>
         </button>
@@ -147,75 +151,75 @@
   </nav>
 
   <!-- ================= HERO SECTION ================= -->
-  <section id="hero" class="relative pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-stone-200">
+  <section id="hero" class="relative pt-8 pb-12 sm:pt-14 sm:pb-18 lg:pt-20 lg:pb-24 border-b border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <!-- Left: Storytelling -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-start">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-amber-950 text-xs font-bold">
+        <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-start">
+          <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-amber-950 text-[11px] sm:text-xs font-bold">
             <i data-lucide="award" class="w-3.5 h-3.5 text-brand-gold"></i>
             <span data-i18n="heroBadge">حِرفة نجدية متوارثة • تمور خلاص القصيم المنتقاة</span>
           </div>
 
-          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-900 leading-[1.18]" data-i18n="heroHeading">
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-stone-900 leading-[1.2] sm:leading-[1.18]" data-i18n="heroHeading">
             أصالةُ الضيافةِ النجدية.. <br/>
             <span class="gold-gradient-text">بصياغةٍ تليقُ بمقاماتكم</span>
           </h2>
 
-          <p class="text-stone-600 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium" data-i18n="heroDesc">
+          <p class="text-stone-600 text-xs sm:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium" data-i18n="heroDesc">
             عجينةٌ هشّة مخبوزة بالزبدة والسمن النقي، محشوة بأجود أنواع خلاص القصيم ومكللة بحبات الفستق الحلبي والترافل المذهب. صمّم بوكس إهدائك الفاخر بدقة أو اختر من مجموعاتنا الجاهزة.
           </p>
 
           <!-- Buttons -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
-            <a href="#giftBuilder" class="inline-flex items-center gap-2 bg-brand-obsidian hover:bg-stone-800 text-brand-goldLight text-xs sm:text-sm font-bold px-7 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3 pt-1">
+            <a href="#giftBuilder" class="inline-flex items-center justify-center gap-2 bg-brand-obsidian hover:bg-stone-800 text-brand-goldLight text-xs sm:text-sm font-bold px-6 py-3.5 rounded-2xl sm:rounded-full shadow-lg active:scale-98 transition-all">
               <i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i>
               <span data-i18n="heroBtnBuilder">صمّم صينية الإهداء الخاصة</span>
             </a>
-            <a href="#catalogue" class="inline-flex items-center gap-2 bg-white hover:bg-stone-100 border border-stone-300 text-stone-800 text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full transition-all">
+            <a href="#catalogue" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-100 border border-stone-300 text-stone-800 text-xs sm:text-sm font-bold px-5 py-3.5 rounded-2xl sm:rounded-full active:scale-98 transition-all">
               <span data-i18n="heroBtnMenu">استكشف الكتالوج الكامل</span>
             </a>
           </div>
 
           <!-- Proof Metrics -->
-          <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-6 border-t border-stone-200 max-w-lg mx-auto lg:mx-0">
-            <a href="https://maps.app.goo.gl/YVJ99SZrpyWbYANx6" target="_blank" class="bg-white/80 hover:bg-white p-3.5 rounded-2xl border border-stone-200 text-center block transition-all shadow-sm">
-              <p class="text-base sm:text-lg font-bold text-stone-900 font-sans flex items-center justify-center gap-1">
-                4.8 <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+          <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 sm:pt-6 border-t border-stone-200 max-w-lg mx-auto lg:mx-0">
+            <a href="https://maps.app.goo.gl/YVJ99SZrpyWbYANx6" target="_blank" class="bg-white/80 hover:bg-white p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border border-stone-200 text-center block transition-all shadow-sm">
+              <p class="text-sm sm:text-lg font-bold text-stone-900 font-sans flex items-center justify-center gap-0.5 text-amber-500">
+                4.8 <i data-lucide="star" class="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-amber-400"></i>
               </p>
-              <p class="text-[11px] text-stone-500 font-bold mt-0.5" data-i18n="metricReview">تقييم خرائط Google</p>
+              <p class="text-[10px] sm:text-[11px] text-stone-500 font-bold mt-0.5" data-i18n="metricReview">خرائط Google</p>
             </a>
-            <div class="bg-white/80 p-3.5 rounded-2xl border border-stone-200 text-center shadow-sm">
-              <p class="text-base sm:text-lg font-bold text-stone-900 font-sans">100%</p>
-              <p class="text-[11px] text-stone-500 font-bold mt-0.5" data-i18n="metricDates">خلاص القصيم الفاخر</p>
+            <div class="bg-white/80 p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border border-stone-200 text-center shadow-sm">
+              <p class="text-sm sm:text-lg font-bold text-stone-900 font-sans">100%</p>
+              <p class="text-[10px] sm:text-[11px] text-stone-500 font-bold mt-0.5" data-i18n="metricDates">خلاص القصيم</p>
             </div>
-            <button onclick="sendWhatsAppMessage('general')" class="bg-white/80 hover:bg-white p-3.5 rounded-2xl border border-stone-200 text-center shadow-sm transition-all block w-full">
-              <p class="text-base sm:text-lg font-bold text-stone-900 font-sans">050 694</p>
-              <p class="text-[11px] text-stone-500 font-bold mt-0.5" data-i18n="metricSupport">خدمة مباشرة</p>
+            <button onclick="sendWhatsAppMessage('general')" class="bg-white/80 hover:bg-white p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border border-stone-200 text-center shadow-sm transition-all block w-full">
+              <p class="text-sm sm:text-lg font-bold text-stone-900 font-sans">050 694</p>
+              <p class="text-[10px] sm:text-[11px] text-stone-500 font-bold mt-0.5" data-i18n="metricSupport">خدمة مباشرة</p>
             </button>
           </div>
         </div>
 
-        <!-- Right: Signature Platter Showcase -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-md bg-white p-4 sm:p-5 rounded-3xl shadow-xl border border-stone-200/80">
-            <div class="h-64 rounded-2xl overflow-hidden relative group">
+        <!-- Right: Signature Showcase Frame -->
+        <div class="lg:col-span-5 relative mt-4 lg:mt-0">
+          <div class="relative mx-auto max-w-sm sm:max-w-md bg-white p-3.5 sm:p-5 rounded-3xl shadow-xl border border-stone-200/80">
+            <div class="h-52 sm:h-64 rounded-2xl overflow-hidden relative group">
               <img src="ror3.jpg" alt="صينية ضيافة القصور الملكية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent flex flex-col justify-end p-5 text-white">
-                <span class="bg-brand-gold text-stone-950 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider font-sans self-start mb-1.5">Signature Platter</span>
-                <h3 class="font-extrabold text-white text-base leading-tight" data-i18n="heroCardTitle">صينية القصور الملكية المشكلة</h3>
-                <p class="text-[11px] text-stone-300 mt-1 line-clamp-2" data-i18n="heroCardDesc">توليفة حصرية من معمول التمر المنقوش، أوراق الفستق المقرمشة، وترافل الشوكولاتة الفاخرة.</p>
+              <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-transparent flex flex-col justify-end p-4 sm:p-5 text-white">
+                <span class="bg-brand-gold text-stone-950 text-[9px] sm:text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider font-sans self-start mb-1">Signature Platter</span>
+                <h3 class="font-extrabold text-white text-sm sm:text-base leading-tight" data-i18n="heroCardTitle">صينية القصور الملكية المشكلة</h3>
+                <p class="text-[10px] sm:text-[11px] text-stone-300 mt-1 line-clamp-2" data-i18n="heroCardDesc">توليفة حصرية من معمول التمر المنقوش، أوراق الفستق المقرمشة، وترافل الشوكولاتة الفاخرة.</p>
               </div>
             </div>
 
-            <div class="flex items-center justify-between pt-4 px-1">
+            <div class="flex items-center justify-between pt-3 sm:pt-4 px-1">
               <div>
-                <span class="text-[10px] text-stone-400 uppercase font-bold block" data-i18n="priceStarting">تبدأ من</span>
-                <span class="text-xl font-black text-stone-900 font-sans">65 <span class="text-xs font-arabic font-normal" data-i18n="currency">ريال</span></span>
+                <span class="text-[9px] sm:text-[10px] text-stone-400 uppercase font-bold block" data-i18n="priceStarting">تبدأ من</span>
+                <span class="text-lg sm:text-xl font-black text-stone-900 font-sans">65 <span class="text-xs font-arabic font-normal" data-i18n="currency">ريال</span></span>
               </div>
-              <a href="#giftBuilder" class="inline-flex items-center gap-1.5 bg-brand-gold hover:bg-brand-goldDark text-stone-950 text-xs font-extrabold px-4 py-2.5 rounded-xl transition-all shadow-sm">
-                <i data-lucide="sliders" class="w-4 h-4"></i>
+              <a href="#giftBuilder" class="inline-flex items-center gap-1.5 bg-brand-gold hover:bg-brand-goldDark text-stone-950 text-xs font-extrabold px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl transition-all shadow-sm">
+                <i data-lucide="sliders" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                 <span data-i18n="heroCardAction">تخصيص الصينية</span>
               </a>
             </div>
@@ -227,92 +231,92 @@
   </section>
 
   <!-- ================= SECTION: BESPOKE GIFT BOX ATELIER ================= -->
-  <section id="giftBuilder" class="py-20 bg-brand-sand/50 border-b border-stone-200">
+  <section id="giftBuilder" class="py-14 sm:py-20 bg-brand-sand/50 border-b border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-burgundy/10 text-brand-burgundy text-xs font-extrabold">
+      <div class="text-center max-w-2xl mx-auto space-y-2 sm:space-y-3 mb-8 sm:mb-12">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-burgundy/10 text-brand-burgundy text-[11px] sm:text-xs font-extrabold">
           <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
           <span data-i18n="builderTag">أتيليه الإهداء الملكي</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900" data-i18n="builderTitle">صمّم صينية الضيافة المخصصة</h2>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-stone-900" data-i18n="builderTitle">صمّم صينية الضيافة المخصصة</h2>
         <p class="text-stone-600 text-xs sm:text-sm leading-relaxed" data-i18n="builderSubtitle">اختر حجم ونوع البوكس الفاخر، وحدد عدد القطع من أصنافك المفضلة وصولاً للسعة المطلوبة، مع كتابة نص بطاقة الإهداء الخاصة بكم.</p>
       </div>
 
-      <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <div class="grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
         
         <!-- Left: Interactive Configuration -->
-        <div class="lg:col-span-8 space-y-8 bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-sm">
+        <div class="lg:col-span-8 space-y-6 sm:space-y-8 bg-white p-4 sm:p-8 rounded-3xl border border-stone-200 shadow-sm">
           
           <!-- STEP 1: Box Capacity Selection -->
-          <div class="space-y-4">
+          <div class="space-y-3 sm:space-y-4">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-brand-obsidian text-brand-goldLight text-xs font-bold flex items-center justify-center font-sans">1</span>
-              <h3 class="font-bold text-stone-900 text-sm sm:text-base" data-i18n="step1Title">اختر حجم وسعة بوكس الإهداء:</h3>
+              <h3 class="font-bold text-stone-900 text-xs sm:text-base" data-i18n="step1Title">اختر حجم وسعة بوكس الإهداء:</h3>
             </div>
             
-            <div class="grid sm:grid-cols-3 gap-3" id="tierGrid">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3" id="tierGrid">
               <!-- Tier 1 -->
-              <div onclick="selectTier(12, 65, 'بوكس معمول الضيافة (12 قطعة)', 'Ma\'amoul Hospitality Box (12 pcs)')" id="tier-12" class="tier-card cursor-pointer p-4 rounded-2xl border-2 border-brand-gold bg-brand-gold/5 transition-all">
+              <div onclick="selectTier(12, 65, 'بوكس معمول الضيافة (12 قطعة)', 'Ma\'amoul Hospitality Box (12 pcs)')" id="tier-12" class="tier-card cursor-pointer p-3.5 sm:p-4 rounded-2xl border-2 border-brand-gold bg-brand-gold/5 transition-all">
                 <div class="flex justify-between items-start">
                   <span class="text-xs font-extrabold text-stone-900" data-i18n="tier1Title">بوكس الضيافة</span>
                   <span class="text-xs font-black text-brand-burgundy font-sans">65 <span class="font-arabic font-normal text-[10px]" data-i18n="currency">ريال</span></span>
                 </div>
-                <p class="text-[11px] text-stone-500 mt-1.5 font-medium" data-i18n="tier1Capacity">السعة: 12 قطعة مختارة</p>
-                <div class="mt-2.5 text-[10px] bg-white px-2 py-0.5 rounded border border-stone-200 inline-block text-stone-600 font-sans font-bold">12 Pieces</div>
+                <p class="text-[11px] text-stone-500 mt-1 font-medium" data-i18n="tier1Capacity">السعة: 12 قطعة مختارة</p>
+                <div class="mt-2 text-[10px] bg-white px-2 py-0.5 rounded border border-stone-200 inline-block text-stone-600 font-sans font-bold">12 Pieces</div>
               </div>
 
               <!-- Tier 2 -->
-              <div onclick="selectTier(24, 115, 'بوكس معمول الإهداء الملكي (24 قطعة)', 'Royal Ma\'amoul Box (24 pcs)')" id="tier-24" class="tier-card cursor-pointer p-4 rounded-2xl border-2 border-stone-200 hover:border-brand-gold bg-white transition-all">
+              <div onclick="selectTier(24, 115, 'بوكس معمول الإهداء الملكي (24 قطعة)', 'Royal Ma\'amoul Box (24 pcs)')" id="tier-24" class="tier-card cursor-pointer p-3.5 sm:p-4 rounded-2xl border-2 border-stone-200 hover:border-brand-gold bg-white transition-all">
                 <div class="flex justify-between items-start">
                   <span class="text-xs font-extrabold text-stone-900" data-i18n="tier2Title">البوكس الملكي</span>
                   <span class="text-xs font-black text-brand-burgundy font-sans">115 <span class="font-arabic font-normal text-[10px]" data-i18n="currency">ريال</span></span>
                 </div>
-                <p class="text-[11px] text-stone-500 mt-1.5 font-medium" data-i18n="tier2Capacity">السعة: 24 قطعة مختارة</p>
-                <div class="mt-2.5 text-[10px] bg-white px-2 py-0.5 rounded border border-stone-200 inline-block text-stone-600 font-sans font-bold">24 Pieces</div>
+                <p class="text-[11px] text-stone-500 mt-1 font-medium" data-i18n="tier2Capacity">السعة: 24 قطعة مختارة</p>
+                <div class="mt-2 text-[10px] bg-white px-2 py-0.5 rounded border border-stone-200 inline-block text-stone-600 font-sans font-bold">24 Pieces</div>
               </div>
 
               <!-- Tier 3 -->
-              <div onclick="selectTier(36, 175, 'صينية معمول القصور الفاخرة (36 قطعة)', 'Imperial Ma\'amoul Tray (36 pcs)')" id="tier-36" class="tier-card cursor-pointer p-4 rounded-2xl border-2 border-stone-200 hover:border-brand-gold bg-white transition-all">
+              <div onclick="selectTier(36, 175, 'صينية معمول القصور الفاخرة (36 قطعة)', 'Imperial Ma\'amoul Tray (36 pcs)')" id="tier-36" class="tier-card cursor-pointer p-3.5 sm:p-4 rounded-2xl border-2 border-stone-200 hover:border-brand-gold bg-white transition-all">
                 <div class="flex justify-between items-start">
                   <span class="text-xs font-extrabold text-stone-900" data-i18n="tier3Title">صينية القصور</span>
                   <span class="text-xs font-black text-brand-burgundy font-sans">175 <span class="font-arabic font-normal text-[10px]" data-i18n="currency">ريال</span></span>
                 </div>
-                <p class="text-[11px] text-stone-500 mt-1.5 font-medium" data-i18n="tier3Capacity">السعة: 36 قطعة مختارة</p>
-                <div class="mt-2.5 text-[10px] bg-white px-2 py-0.5 rounded border border-stone-200 inline-block text-stone-600 font-sans font-bold">36 Pieces</div>
+                <p class="text-[11px] text-stone-500 mt-1 font-medium" data-i18n="tier3Capacity">السعة: 36 قطعة مختارة</p>
+                <div class="mt-2 text-[10px] bg-white px-2 py-0.5 rounded border border-stone-200 inline-block text-stone-600 font-sans font-bold">36 Pieces</div>
               </div>
             </div>
           </div>
 
           <!-- STEP 2: Pick Pastry Counts -->
-          <div class="space-y-4 pt-4 border-t border-stone-100">
+          <div class="space-y-3 sm:space-y-4 pt-3 border-t border-stone-100">
             <div class="flex items-center justify-between flex-wrap gap-2">
               <div class="flex items-center gap-2">
                 <span class="w-6 h-6 rounded-full bg-brand-obsidian text-brand-goldLight text-xs font-bold flex items-center justify-center font-sans">2</span>
-                <h3 class="font-bold text-stone-900 text-sm sm:text-base" data-i18n="step2Title">املأ الصينية بالأصناف المنتقاة:</h3>
+                <h3 class="font-bold text-stone-900 text-xs sm:text-base" data-i18n="step2Title">املأ الصينية بالأصناف المنتقاة:</h3>
               </div>
               
-              <div class="text-xs px-3 py-1 rounded-full font-bold bg-stone-100 text-stone-700">
+              <div class="text-xs px-2.5 py-1 rounded-full font-bold bg-stone-100 text-stone-700">
                 <span data-i18n="filledLabel">المضاف:</span> 
                 <span id="builderCapacityCount" class="text-brand-burgundy font-sans font-black">0 / 12</span>
               </div>
             </div>
 
-            <!-- Pastries list with actual photography thumbnails -->
-            <div class="grid sm:grid-cols-2 gap-3" id="builderItemsContainer"></div>
+            <!-- Pastries list -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3" id="builderItemsContainer"></div>
           </div>
 
           <!-- STEP 3: Silk Ribbon & Personal Card -->
-          <div class="space-y-4 pt-4 border-t border-stone-100">
+          <div class="space-y-3 sm:space-y-4 pt-3 border-t border-stone-100">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-brand-obsidian text-brand-goldLight text-xs font-bold flex items-center justify-center font-sans">3</span>
-              <h3 class="font-bold text-stone-900 text-sm sm:text-base" data-i18n="step3Title">تنسيق الشريط وبطاقة الإهداء:</h3>
+              <h3 class="font-bold text-stone-900 text-xs sm:text-base" data-i18n="step3Title">تنسيق الشريط وبطاقة الإهداء:</h3>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
-                <label class="block text-xs font-bold text-stone-700 mb-1.5" data-i18n="ribbonLabel">لون الشريط الحريري:</label>
+                <label class="block text-xs font-bold text-stone-700 mb-1" data-i18n="ribbonLabel">لون الشريط الحريري:</label>
                 <select id="builderRibbon" class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 text-stone-800 focus:outline-none focus:border-brand-gold">
                   <option value="شريط ذهبي ملكي (Royal Gold Ribbon)" data-i18n="ribbonGold">شريط ذهبي ملكي (Royal Gold Ribbon)</option>
                   <option value="شريط عنابي مخملي (Burgundy Velvet Ribbon)" data-i18n="ribbonBurgundy">شريط عنابي مخملي (Burgundy Velvet Ribbon)</option>
@@ -321,7 +325,7 @@
               </div>
 
               <div>
-                <label class="block text-xs font-bold text-stone-700 mb-1.5" data-i18n="cardLabel">نص بطاقة الإهداء (اختياري):</label>
+                <label class="block text-xs font-bold text-stone-700 mb-1" data-i18n="cardLabel">نص بطاقة الإهداء (اختياري):</label>
                 <input type="text" id="builderNote" placeholder="اكتب عبارة الإهداء أو اسم المهدى إليه..." data-i18n-ph="cardPlaceholder" class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 text-stone-800 focus:outline-none focus:border-brand-gold">
               </div>
             </div>
@@ -330,31 +334,31 @@
         </div>
 
         <!-- Right: Sticky Live Box Summary -->
-        <div class="lg:col-span-4 bg-white p-6 rounded-3xl border border-stone-200 shadow-sm sticky top-28 space-y-5">
-          <div class="border-b border-stone-100 pb-3">
-            <h4 class="font-black text-stone-900 text-base" data-i18n="boxSummaryTitle">ملخص الصينية المخصصة</h4>
-            <p class="text-xs text-stone-400 font-sans" id="selectedTierTitle">بوكس معمول الضيافة (12 قطعة)</p>
+        <div class="lg:col-span-4 bg-white p-5 rounded-3xl border border-stone-200 shadow-sm lg:sticky lg:top-28 space-y-4">
+          <div class="border-b border-stone-100 pb-2.5">
+            <h4 class="font-black text-stone-900 text-sm sm:text-base" data-i18n="boxSummaryTitle">ملخص الصينية المخصصة</h4>
+            <p class="text-xs text-stone-400 font-sans mt-0.5" id="selectedTierTitle">بوكس معمول الضيافة (12 قطعة)</p>
           </div>
 
           <!-- Items list -->
-          <div class="space-y-2 max-h-48 overflow-y-auto custom-scrollbar text-xs" id="builderSummaryItems">
-            <p class="text-stone-400 italic text-center py-4" data-i18n="emptyBoxMsg">لم تقم بإضافة أي أصناف بعد.</p>
+          <div class="space-y-1.5 max-h-40 overflow-y-auto custom-scrollbar text-xs" id="builderSummaryItems">
+            <p class="text-stone-400 italic text-center py-3" data-i18n="emptyBoxMsg">لم تقم بإضافة أي أصناف بعد.</p>
           </div>
 
           <!-- Price & Actions -->
-          <div class="pt-4 border-t border-stone-200 space-y-3">
+          <div class="pt-3 border-t border-stone-200 space-y-2.5">
             <div class="flex justify-between items-center">
               <span class="text-xs font-bold text-stone-600" data-i18n="boxPriceTotal">إجمالي البوكس:</span>
-              <span class="text-2xl font-black text-stone-900 font-sans" id="builderTotalPrice">65 <span class="text-xs font-arabic font-normal" data-i18n="currency">ريال</span></span>
+              <span class="text-xl sm:text-2xl font-black text-stone-900 font-sans" id="builderTotalPrice">65 <span class="text-xs font-arabic font-normal" data-i18n="currency">ريال</span></span>
             </div>
 
-            <button onclick="addCustomBoxToCart()" class="w-full inline-flex items-center justify-center gap-2 bg-brand-obsidian hover:bg-stone-800 text-brand-goldLight text-xs font-bold py-3 rounded-xl transition-all shadow">
+            <button onclick="addCustomBoxToCart()" class="w-full inline-flex items-center justify-center gap-2 bg-brand-obsidian hover:bg-stone-800 text-brand-goldLight text-xs font-bold py-3 rounded-xl transition-all shadow active:scale-98">
               <i data-lucide="plus-circle" class="w-4 h-4 text-brand-gold"></i>
               <span data-i18n="btnAddToCartBox">إضافة الصينية إلى السلة</span>
             </button>
 
             <!-- Bespoke Box Direct Order -->
-            <button onclick="orderCustomBoxDirectWhatsApp()" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold py-3 rounded-xl transition-all shadow">
+            <button onclick="orderCustomBoxDirectWhatsApp()" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold py-3 rounded-xl transition-all shadow active:scale-98">
               <i data-lucide="message-circle" class="w-4 h-4"></i>
               <span data-i18n="btnDirectWhatsAppBox">طلب فوري عبر الواتساب</span>
             </button>
@@ -366,42 +370,42 @@
   </section>
 
   <!-- ================= CATALOGUE SECTION ================= -->
-  <section id="catalogue" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto space-y-3 mb-10">
-      <h2 class="text-xs uppercase tracking-widest text-brand-gold font-black font-sans">Our Handcrafted Selection</h2>
-      <p class="text-3xl sm:text-4xl font-extrabold text-stone-900" data-i18n="menuTitle">أصناف معمول والعلب الجاهزة</p>
+  <section id="catalogue" class="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto space-y-2 sm:space-y-3 mb-8 sm:mb-10">
+      <h2 class="text-[10px] sm:text-xs uppercase tracking-widest text-brand-gold font-black font-sans">Our Handcrafted Selection</h2>
+      <p class="text-2xl sm:text-4xl font-extrabold text-stone-900" data-i18n="menuTitle">أصناف معمول والعلب الجاهزة</p>
       <p class="text-stone-500 text-xs sm:text-sm" data-i18n="menuSubtitle">مخبوزة يومياً بأجود المكونات الطبيعية وحشوة خلاص القصيم الفاخرة</p>
     </div>
 
     <!-- Category Filters -->
-    <div class="flex flex-wrap items-center justify-center gap-2 mb-10" id="filterTabGroup">
-      <button onclick="filterCatalogue('all')" class="cat-btn active px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-brand-obsidian text-white shadow" data-cat="all" data-i18n="catAll">الكل</button>
-      <button onclick="filterCatalogue('classic')" class="cat-btn px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-cat="classic" data-i18n="catClassic">معمول التمر</button>
-      <button onclick="filterCatalogue('pistachio')" class="cat-btn px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-cat="pistachio" data-i18n="catPistachio">الفستق والمكسرات</button>
-      <button onclick="filterCatalogue('platters')" class="cat-btn px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-cat="platters" data-i18n="catPlatters">الصواني والبوكسات</button>
+    <div class="flex items-center justify-start sm:justify-center gap-2 mb-8 overflow-x-auto pb-2 custom-scrollbar" id="filterTabGroup">
+      <button onclick="filterCatalogue('all')" class="cat-btn active px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-brand-obsidian text-white shadow shrink-0" data-cat="all" data-i18n="catAll">الكل</button>
+      <button onclick="filterCatalogue('classic')" class="cat-btn px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-white text-stone-700 hover:bg-stone-100 border border-stone-200 shrink-0" data-cat="classic" data-i18n="catClassic">معمول التمر</button>
+      <button onclick="filterCatalogue('pistachio')" class="cat-btn px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-white text-stone-700 hover:bg-stone-100 border border-stone-200 shrink-0" data-cat="pistachio" data-i18n="catPistachio">الفستق والمكسرات</button>
+      <button onclick="filterCatalogue('platters')" class="cat-btn px-4 py-2 rounded-full text-xs font-extrabold transition-all bg-white text-stone-700 hover:bg-stone-100 border border-stone-200 shrink-0" data-cat="platters" data-i18n="catPlatters">الصواني والبوكسات</button>
     </div>
 
-    <!-- Products Grid (Renders actual 6 image cards) -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="catalogueGrid"></div>
+    <!-- Products Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6" id="catalogueGrid"></div>
   </section>
 
-  <!-- ================= REVIEWS & LOCATION & HOURS (GOOGLE MAPS) ================= -->
-  <section id="reviewsLocation" class="py-16 bg-white border-t border-stone-200">
+  <!-- ================= REVIEWS & LOCATION & HOURS ================= -->
+  <section id="reviewsLocation" class="py-14 sm:py-16 bg-white border-t border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-8 items-start">
         
         <!-- Left: Reviews & Social Proof -->
-        <div class="lg:col-span-5 space-y-6">
+        <div class="lg:col-span-5 space-y-5">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-950 text-xs font-extrabold">
             <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-600"></i>
             <span data-i18n="locationBuraydah">بريدة • حي الصفراء • شارع أوس بن ثابت</span>
           </div>
 
-          <h2 class="text-3xl font-extrabold text-stone-900" data-i18n="reviewHeading">تقييم 4.8★ على خرائط Google</h2>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900" data-i18n="reviewHeading">تقييم 4.8★ على خرائط Google</h2>
           
-          <!-- Simplified & Scaled-Down 4.8 Star Rating Box -->
-          <div class="inline-flex items-center gap-3 bg-brand-cream py-2.5 px-4 rounded-xl border border-stone-200">
-            <span class="text-lg font-black text-stone-900 font-sans">4.8</span>
+          <!-- Scaled 4.8 Rating Box -->
+          <div class="inline-flex items-center gap-3 bg-brand-cream py-2 px-3.5 rounded-xl border border-stone-200">
+            <span class="text-base sm:text-lg font-black text-stone-900 font-sans">4.8</span>
             <div class="flex items-center gap-0.5 text-amber-400">
               <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
               <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
@@ -411,72 +415,72 @@
             </div>
           </div>
 
-          <div class="space-y-3">
-            <div class="flex items-start gap-3 text-stone-600 text-xs">
+          <div class="space-y-2.5">
+            <div class="flex items-start gap-2.5 text-stone-600 text-xs">
               <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
               <span data-i18n="reviewPraise1">"أفضل معمول هش ولذيذ بالتمر والفستق في بريدة، التقديم يرفع الراس في كل مناسبة."</span>
             </div>
-            <div class="flex items-start gap-3 text-stone-600 text-xs">
+            <div class="flex items-start gap-2.5 text-stone-600 text-xs">
               <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
               <span data-i18n="reviewPraise2">"تغليف البوكسات فخم جداً ومناسب للإهداءات الرسمية وحفلات الأعياد."</span>
             </div>
           </div>
 
-          <div class="pt-2 flex flex-wrap gap-3">
-            <a href="https://maps.app.goo.gl/YVJ99SZrpyWbYANx6" target="_blank" class="inline-flex items-center gap-2 bg-stone-900 hover:bg-brand-gold text-white hover:text-stone-950 font-extrabold text-xs px-5 py-3 rounded-xl transition-all shadow-sm">
+          <div class="pt-2 flex flex-col sm:flex-row gap-2.5">
+            <a href="https://maps.app.goo.gl/YVJ99SZrpyWbYANx6" target="_blank" class="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-brand-gold text-white hover:text-stone-950 font-extrabold text-xs px-4 py-3 rounded-xl transition-all shadow-sm">
               <i data-lucide="external-link" class="w-4 h-4"></i>
               <span data-i18n="btnOpenMap">عرض الموقع والتقييمات على Google Maps</span>
             </a>
             
-            <button onclick="sendWhatsAppMessage('location')" class="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold text-xs px-4 py-3 rounded-xl transition-all shadow-sm">
+            <button onclick="sendWhatsAppMessage('location')" class="inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold text-xs px-4 py-3 rounded-xl transition-all shadow-sm">
               <i data-lucide="message-circle" class="w-4 h-4"></i>
-              <span data-i18n="btnHoursWhatsApp">استفسار المواعيد واللوكيشن عبر واتساب</span>
+              <span data-i18n="btnHoursWhatsApp">استفسار المواعيد عبر واتساب</span>
             </button>
           </div>
         </div>
 
         <!-- Right: Map Interaction & Live Operating Schedule Card -->
         <div class="lg:col-span-7 space-y-4">
-          <div class="bg-brand-sand rounded-3xl p-5 sm:p-6 border border-stone-200 shadow-inner space-y-5">
+          <div class="bg-brand-sand rounded-3xl p-4 sm:p-6 border border-stone-200 shadow-inner space-y-4">
             
             <!-- Store Title & Dynamic Live Status Badge -->
-            <div class="flex flex-wrap items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-stone-200">
+            <div class="flex flex-wrap items-center justify-between gap-2.5 bg-white p-3.5 sm:p-4 rounded-2xl border border-stone-200">
               <div>
-                <h4 class="font-extrabold text-stone-900 text-base" data-i18n="mapCardStoreName">معمول - الفرع الرئيسي (بريدة)</h4>
+                <h4 class="font-extrabold text-stone-900 text-sm sm:text-base" data-i18n="mapCardStoreName">معمول - الفرع الرئيسي (بريدة)</h4>
                 <p class="text-xs text-stone-500 font-sans mt-0.5">Aws Ibn Thabit St, Al Safra, Buraydah</p>
               </div>
 
-              <!-- Dynamic Real-Time Open/Closed Badge -->
-              <div id="liveStatusBadge" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold"></div>
+              <!-- Dynamic Open/Closed Badge -->
+              <div id="liveStatusBadge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold"></div>
             </div>
 
             <!-- Operating Hours Schedule Table -->
-            <div class="bg-white rounded-2xl p-4 border border-stone-200 space-y-3">
-              <div class="flex items-center justify-between border-b border-stone-100 pb-2.5">
+            <div class="bg-white rounded-2xl p-3.5 sm:p-4 border border-stone-200 space-y-2.5">
+              <div class="flex items-center justify-between border-b border-stone-100 pb-2">
                 <div class="flex items-center gap-2 text-stone-800 font-bold text-xs">
-                  <i data-lucide="clock" class="w-4 h-4 text-brand-gold"></i>
+                  <i data-lucide="clock" class="w-3.5 h-3.5 text-brand-gold"></i>
                   <span data-i18n="hoursTitle">أوقات العمل واستقبال الطلبات</span>
                 </div>
-                <span class="text-[11px] text-stone-400 font-sans" data-i18n="timezoneNote">توقيت السعودية (KSA)</span>
+                <span class="text-[10px] sm:text-[11px] text-stone-400 font-sans" data-i18n="timezoneNote">توقيت السعودية (KSA)</span>
               </div>
 
               <!-- Weekly Schedule Grid -->
-              <div class="grid sm:grid-cols-2 gap-2 text-xs" id="scheduleDisplayList"></div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs" id="scheduleDisplayList"></div>
             </div>
 
             <!-- Visual Map Button -->
-            <a href="https://maps.app.goo.gl/YVJ99SZrpyWbYANx6" target="_blank" class="block group relative h-40 rounded-2xl overflow-hidden bg-stone-200 border border-stone-300">
-              <div class="absolute inset-0 bg-stone-900/60 group-hover:bg-stone-900/70 transition-all flex flex-col items-center justify-center text-white p-4 text-center space-y-1.5">
-                <div class="w-9 h-9 rounded-full bg-brand-gold text-stone-950 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+            <a href="https://maps.app.goo.gl/YVJ99SZrpyWbYANx6" target="_blank" class="block group relative h-36 sm:h-40 rounded-2xl overflow-hidden bg-stone-200 border border-stone-300">
+              <div class="absolute inset-0 bg-stone-900/60 group-hover:bg-stone-900/70 transition-all flex flex-col items-center justify-center text-white p-3 text-center space-y-1">
+                <div class="w-8 h-8 rounded-full bg-brand-gold text-stone-950 flex items-center justify-center shadow group-hover:scale-110 transition-transform">
                   <i data-lucide="map-pin" class="w-4 h-4"></i>
                 </div>
-                <span class="font-extrabold text-sm" data-i18n="clickMapPrompt">انقر لفتح الخريطة والملاحة المباشرة</span>
-                <span class="text-[11px] text-stone-300 font-sans">maps.app.goo.gl/YVJ99SZrpyWbYANx6</span>
+                <span class="font-extrabold text-xs sm:text-sm" data-i18n="clickMapPrompt">انقر لفتح الخريطة والملاحة المباشرة</span>
+                <span class="text-[10px] text-stone-300 font-sans">maps.app.goo.gl/YVJ99SZrpyWbYANx6</span>
               </div>
             </a>
 
             <!-- Direct Phone & WhatsApp Callout -->
-            <div class="flex flex-wrap items-center justify-between gap-3 text-xs text-stone-600 pt-1 px-1">
+            <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-stone-600 pt-0.5 px-1">
               <button onclick="sendWhatsAppMessage('location')" class="hover:text-emerald-700 font-medium transition-colors text-right flex items-center gap-1.5">
                 <span>📞 هاتف / واتساب:</span>
                 <strong class="font-sans text-stone-900 font-black text-sm" dir="ltr">050 694 3096</strong>
@@ -494,58 +498,72 @@
     </div>
   </section>
 
+  <!-- ================= FIXED BOTTOM ACTION BAR (MOBILE) ================= -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-brand-cream/95 backdrop-blur-md border-t border-stone-200/90 px-4 py-2.5 pb-safe flex items-center justify-between gap-3 shadow-2xl">
+    <!-- Mobile Cart Button -->
+    <button onclick="toggleCart(true)" class="relative flex-1 inline-flex items-center justify-center gap-2 bg-white active:bg-stone-100 border border-stone-300 text-stone-900 py-2.5 px-4 rounded-xl text-xs font-bold transition-all shadow-sm">
+      <i data-lucide="shopping-bag" class="w-4 h-4 text-brand-gold"></i>
+      <span data-i18n="mobileViewCart">السلة</span>
+      <span id="mobileCartCount" class="bg-brand-burgundy text-white text-[10px] font-sans font-bold px-1.5 py-0.2 rounded-full hidden">0</span>
+    </button>
+
+    <!-- Mobile WhatsApp Button -->
+    <button onclick="sendWhatsAppMessage('general')" class="flex-1 inline-flex items-center justify-center gap-2 bg-emerald-700 active:bg-emerald-800 text-white py-2.5 px-4 rounded-xl text-xs font-bold transition-all shadow-sm">
+      <i data-lucide="message-circle" class="w-4 h-4"></i>
+      <span data-i18n="mobileWhatsApp">واتساب</span>
+    </button>
+  </div>
+
   <!-- ================= STRICT OFF-SCREEN CART DRAWER ================= -->
-  <!-- Backdrop -->
   <div id="cartBackdrop" onclick="toggleCart(false)" class="fixed inset-0 bg-stone-950/60 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none invisible"></div>
 
-  <!-- Sliding Drawer -->
   <div id="cartDrawer" class="fixed top-0 bottom-0 z-50 w-full max-w-md bg-white shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out pointer-events-none invisible">
     
-    <!-- Header -->
-    <div class="p-5 border-b border-stone-200 flex items-center justify-between bg-brand-cream">
+    <!-- Drawer Header -->
+    <div class="p-4 sm:p-5 border-b border-stone-200 flex items-center justify-between bg-brand-cream">
       <div class="flex items-center gap-2">
-        <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-gold"></i>
-        <h3 class="font-extrabold text-stone-900 text-base" data-i18n="cartTitle">سلة المشتريات</h3>
+        <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 sm:h-5 text-brand-gold"></i>
+        <h3 class="font-extrabold text-stone-900 text-sm sm:text-base" data-i18n="cartTitle">سلة المشتريات</h3>
         <span id="cartDrawerCount" class="text-xs bg-stone-200 text-stone-800 px-2 py-0.5 rounded-full font-sans font-bold">0</span>
       </div>
-      <button onclick="toggleCart(false)" class="p-1 rounded-lg text-stone-400 hover:text-stone-700">
+      <button onclick="toggleCart(false)" class="p-1.5 rounded-lg text-stone-400 hover:text-stone-700 active:bg-stone-200">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
     </div>
 
     <!-- Items Container -->
-    <div class="flex-1 p-5 overflow-y-auto space-y-4 custom-scrollbar" id="cartItemsList"></div>
+    <div class="flex-1 p-4 sm:p-5 overflow-y-auto space-y-3.5 custom-scrollbar" id="cartItemsList"></div>
 
     <!-- Footer Checkout -->
-    <div class="p-5 border-t border-stone-200 bg-brand-cream space-y-4">
+    <div class="p-4 sm:p-5 border-t border-stone-200 bg-brand-cream space-y-3 pb-safe">
       <div>
         <label class="block text-[11px] font-bold text-stone-600 mb-1" data-i18n="cartNotes">ملاحظات التوصيل أو وقت الاستلام:</label>
         <input type="text" id="cartNotesInput" placeholder="مثال: الاستلام الساعة 5 مساءً في بريدة..." data-i18n-ph="cartNotesPh" class="w-full text-xs bg-white border border-stone-300 rounded-xl p-2.5 focus:outline-none focus:border-brand-gold">
       </div>
 
-      <div class="flex justify-between items-center pt-2">
-        <span class="text-sm font-extrabold text-stone-700" data-i18n="cartTotalLabel">المجموع الكلي:</span>
-        <span class="text-2xl font-black text-stone-900 font-sans" id="cartTotalSum">0 <span class="text-xs font-arabic font-normal" data-i18n="currency">ريال</span></span>
+      <div class="flex justify-between items-center pt-1">
+        <span class="text-xs sm:text-sm font-extrabold text-stone-700" data-i18n="cartTotalLabel">المجموع الكلي:</span>
+        <span class="text-xl sm:text-2xl font-black text-stone-900 font-sans" id="cartTotalSum">0 <span class="text-xs font-arabic font-normal" data-i18n="currency">ريال</span></span>
       </div>
 
       <!-- Full Cart Invoice Order -->
-      <button onclick="checkoutWhatsApp()" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold py-3.5 px-6 rounded-2xl shadow-lg transition-all text-sm">
-        <i data-lucide="message-circle" class="w-5 h-5"></i>
+      <button onclick="checkoutWhatsApp()" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold py-3.5 px-6 rounded-2xl shadow-lg active:scale-98 transition-all text-xs sm:text-sm">
+        <i data-lucide="message-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
         <span data-i18n="btnCheckoutWhatsApp">إرسال الطلب عبر الواتساب (+966506943096)</span>
       </button>
 
-      <button onclick="emptyCart()" class="w-full text-center text-xs text-stone-400 hover:text-red-600 transition-colors font-medium" data-i18n="btnClearCart">
+      <button onclick="emptyCart()" class="w-full text-center text-[11px] text-stone-400 hover:text-red-600 transition-colors font-medium py-1" data-i18n="btnClearCart">
         تفريغ السلة
       </button>
     </div>
   </div>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="bg-brand-obsidian text-stone-400 py-12 border-t border-stone-800 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-stone-800">
+  <footer class="bg-brand-obsidian text-stone-400 py-10 sm:py-12 border-t border-stone-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 pb-6 sm:pb-8 border-b border-stone-800">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-brand-gold font-display font-black text-lg">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-stone-800 flex items-center justify-center text-brand-gold font-display font-black text-lg">
             R
           </div>
           <div>
@@ -554,7 +572,7 @@
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-6 text-stone-300 font-bold">
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-stone-300 font-bold text-xs">
           <a href="#hero" class="hover:text-brand-gold" data-i18n="navHome">الرئيسية</a>
           <a href="#giftBuilder" class="hover:text-brand-gold" data-i18n="navBuilder">أتيليه الإهداء</a>
           <a href="#catalogue" class="hover:text-brand-gold" data-i18n="navMenu">الكتالوج</a>
@@ -565,7 +583,7 @@
         </div>
       </div>
 
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500 text-[11px]">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-stone-500 text-[11px] text-center sm:text-start">
         <p>© 2026 معمول (Ma'amoul). جميع الحقوق محفوظة.</p>
         <button onclick="sendWhatsAppMessage('general')" class="hover:text-stone-300 transition-colors font-sans" dir="ltr">
           Direct WhatsApp: +966 50 694 3096
@@ -579,7 +597,6 @@
     // 1. BUSINESS CONSTANTS & TIMINGS SCHEDULE
     const BUSINESS_PHONE = "966506943096";
 
-    // Schedule Definition
     const storeHours = {
       0: { nameAr: "الأحد", nameEn: "Sunday", open: 9, close: 17, formattedAr: "9:00 ص – 5:00 م", formattedEn: "9:00 AM – 5:00 PM" },
       1: { nameAr: "الإثنين", nameEn: "Monday", open: 11, close: 17, formattedAr: "11:00 ص – 5:00 م", formattedEn: "11:00 AM – 5:00 PM" },
@@ -590,7 +607,6 @@
       6: { nameAr: "السبت", nameEn: "Saturday", open: 9, close: 17, formattedAr: "9:00 ص – 5:00 م", formattedEn: "9:00 AM – 5:00 PM" }
     };
 
-    // Calculate dynamic store status based on Saudi Time (UTC+3)
     function getStoreStatus() {
       const now = new Date();
       const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
@@ -612,97 +628,103 @@
       };
     }
 
-    // 2. WHATSAPP MULTI-CONTEXT DISPATCHER
+    // 2. WHATSAPP MULTI-CONTEXT DISPATCHER (NO EMOJIS - CLEAN & CRISP)
     function sendWhatsAppMessage(type, data = {}) {
       let msg = "";
 
       switch (type) {
-        // Flow 1: GENERAL INQUIRY
         case 'general':
           msg = lang === 'ar'
-            ? `السلام عليكم ورحمة الله وبركاته،\nأود الاستفسار عن قائمة الضيافة الفاخرة والخيارات المتوفرة لديكم في معمول.`
-            : `Hello, I would like to inquire about Ma'amoul's luxury hospitality menu and available options.`;
+            ? "السلام عليكم، أود الاستفسار عن قائمة الضيافة والطلبات الخاصة المتوفرة لديكم."
+            : "Hello, I would like to inquire about Ma'amoul's menu and hospitality options.";
           break;
 
-        // Flow 2: LOCATION & OPERATING HOURS INQUIRY
         case 'location':
           msg = lang === 'ar'
-            ? `مرحباً معمول،\nأود الاستفسار عن موقع فرعكم في بريدة (حي الصفراء - شارع أوس بن ثابت) وأوقات العمل:\n• الأربعاء - الأحد: 9:00 ص – 5:00 م\n• الإثنين - الثلاثاء: 11:00 ص – 5:00 م\n\nأرغب بترتيب موعد للاستلام / الطلب.`
-            : `Hello Ma'amoul,\nI would like to check your boutique location in Buraydah (Al Safra - Aws Ibn Thabit St) and working hours:\n• Wed - Sun: 9:00 AM – 5:00 PM\n• Mon - Tue: 11:00 AM – 5:00 PM\n\nI would like to arrange pickup / delivery.`;
+            ? "السلام عليكم، أود الاستفسار عن موقع الفرع في بريدة (حي الصفراء) وأوقات العمل المتاحة للاستلام."
+            : "Hello, I would like to check your boutique location in Buraydah (Al Safra) and store pickup hours.";
           break;
 
-        // Flow 3: SINGLE PRODUCT QUICK ORDER
         case 'single_product':
           msg = lang === 'ar'
-            ? `مرحباً معمول،\nأود طلب الصنف التالي:\n\n✨ *${data.name}*\n💰 *السعر:* ${data.price} ريال\n📍 *الفرع:* بريدة - حي الصفراء\n\nيرجى تأكيد التوفر وترتيب الاستلام/التوصيل.`
-            : `Hello Ma'amoul,\nI would like to order:\n\n✨ *${data.name}*\n💰 *Price:* ${data.price} SAR\n📍 *Store:* Buraydah - Al Safra\n\nPlease confirm availability and arrange pickup/delivery.`;
+            ? `طلب منتج:\n- الصنف: ${data.name}\n- السعر: ${data.price} ريال\n- الفرع: بريدة - حي الصفراء\n\nيرجى تأكيد التوفر وترتيب الاستلام أو التوصيل.`
+            : `Order Request:\n- Item: ${data.name}\n- Price: ${data.price} SAR\n- Branch: Buraydah - Al Safra\n\nPlease confirm availability and pickup or delivery details.`;
           break;
 
-        // Flow 4: BESPOKE LUXURY GIFT BOX ORDER
-        case 'custom_box':
-          msg = lang === 'ar'
-            ? `✨ *طلب بوكس إهداء فاخر - معمول*\n\n`
-            : `✨ *Bespoke Luxury Gifting Order - Ma'amoul*\n\n`;
-
-          msg += `📦 *${lang === 'ar' ? 'نوع البوكس' : 'Tray Tier'}:* ${data.tierName}\n`;
-          msg += `🎀 *${lang === 'ar' ? 'لون الشريط' : 'Ribbon'}:* ${data.ribbon}\n`;
-          if (data.note) {
-            msg += `💌 *${lang === 'ar' ? 'بطاقة الإهداء' : 'Greeting Card'}:* "${data.note}"\n`;
-          }
-
-          msg += `\n🍰 *${lang === 'ar' ? 'المحتويات' : 'Contents'}:*\n`;
-          Object.entries(data.items).forEach(([id, qty]) => {
+        case 'custom_box': {
+          const itemsList = Object.entries(data.items).map(([id, qty]) => {
             const item = pastries.find(p => p.id === id);
             const name = lang === 'ar' ? item.nameAr : item.nameEn;
             const unit = lang === 'ar' ? 'حبة' : 'pcs';
-            msg += `• ${name}: ${qty} ${unit}\n`;
-          });
+            return `  • ${name}: ${qty} ${unit}`;
+          }).join('\n');
 
-          msg += `\n💰 *${lang === 'ar' ? 'السعر' : 'Price'}:* ${data.price} SAR\n`;
-          msg += `📍 *${lang === 'ar' ? 'الفرع' : 'Location'}:* بريدة - حي الصفراء`;
-          break;
-
-        // Flow 5: FULL SHOPPING CART CHECKOUT
-        case 'cart':
-          msg = lang === 'ar'
-            ? `🛍️ *طلب جديد عبر المتجر الإلكتروني - معمول*\n`
-            : `🛍️ *New Web Order - Ma'amoul*\n`;
-          msg += `📍 *${lang === 'ar' ? 'الفرع' : 'Store'}:* بريدة - حي الصفراء\n`;
-          msg += `------------------------------------\n\n`;
-
-          data.cart.forEach((item, idx) => {
-            const itemSum = item.price * item.qty;
-            const name = lang === 'ar' ? item.nameAr : item.nameEn;
-
-            msg += `*${idx + 1}. ${name}*\n`;
-            msg += `   • ${lang === 'ar' ? 'الكمية' : 'Qty'}: ${item.qty}\n`;
-            msg += `   • ${lang === 'ar' ? 'المجموع' : 'Subtotal'}: ${itemSum} SAR\n`;
-
-            if (item.type === 'box') {
-              msg += `   🎀 ${item.ribbon}\n`;
-              if (item.note) msg += `   💌 ${item.note}\n`;
-              const breakdown = Object.entries(item.details).map(([id, q]) => {
-                const p = pastries.find(opt => opt.id === id);
-                return `${lang === 'ar' ? p.nameAr : p.nameEn} (${q})`;
-              }).join(', ');
-              msg += `   🍰 ${breakdown}\n`;
-            }
-            msg += `\n`;
-          });
-
-          msg += `------------------------------------\n`;
-          msg += `💰 *${lang === 'ar' ? 'المجموع الكلي' : 'Grand Total'}:* ${data.grandTotal} SAR\n`;
-          if (data.notes) {
-            msg += `📝 *${lang === 'ar' ? 'ملاحظات العميل' : 'Customer Notes'}:* ${data.notes}\n`;
+          if (lang === 'ar') {
+            msg = `طلب بوكس إهداء مخصص:\n` +
+                  `- نوع البوكس: ${data.tierName}\n` +
+                  `- الشريط: ${data.ribbon}\n` +
+                  (data.note ? `- بطاقة الإهداء: "${data.note}"\n` : '') +
+                  `- المحتويات:\n${itemsList}\n` +
+                  `- الإجمالي: ${data.price} ريال\n` +
+                  `- الفرع: بريدة - حي الصفراء`;
+          } else {
+            msg = `Custom Gift Box Order:\n` +
+                  `- Tier: ${data.tierName}\n` +
+                  `- Ribbon: ${data.ribbon}\n` +
+                  (data.note ? `- Card Note: "${data.note}"\n` : '') +
+                  `- Contents:\n${itemsList}\n` +
+                  `- Total: ${data.price} SAR\n` +
+                  `- Branch: Buraydah - Al Safra`;
           }
           break;
+        }
+
+        case 'cart': {
+          const isAr = lang === 'ar';
+          const itemsList = data.cart.map((item, idx) => {
+            const itemSum = item.price * item.qty;
+            const name = isAr ? item.nameAr : item.nameEn;
+            let line = `${idx + 1}. ${name} (${item.qty}x) = ${itemSum} SAR`;
+
+            if (item.type === 'box') {
+              const breakdown = Object.entries(item.details).map(([id, q]) => {
+                const p = pastries.find(opt => opt.id === id);
+                return `${isAr ? p.nameAr : p.nameEn} (${q})`;
+              }).join(', ');
+
+              line += `\n   - ${isAr ? 'الشريط' : 'Ribbon'}: ${item.ribbon}`;
+              if (item.note) line += `\n   - ${isAr ? 'الكرت' : 'Card'}: "${item.note}"`;
+              line += `\n   - ${isAr ? 'المحتويات' : 'Pieces'}: ${breakdown}`;
+            }
+            return line;
+          }).join('\n\n');
+
+          if (isAr) {
+            msg = `طلب جديد - متجر معمول:\n` +
+                  `الفرع: بريدة - حي الصفراء\n` +
+                  `--------------------\n` +
+                  `${itemsList}\n` +
+                  `--------------------\n` +
+                  `المجموع الكلي: ${data.grandTotal} ريال\n` +
+                  (data.notes ? `ملاحظات العميل: ${data.notes}\n` : '');
+          } else {
+            msg = `New Order - Ma'amoul:\n` +
+                  `Branch: Buraydah - Al Safra\n` +
+                  `--------------------\n` +
+                  `${itemsList}\n` +
+                  `--------------------\n` +
+                  `Grand Total: ${data.grandTotal} SAR\n` +
+                  (data.notes ? `Customer Notes: ${data.notes}\n` : '');
+          }
+          break;
+        }
       }
 
       const url = `https://wa.me/${BUSINESS_PHONE}?text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank');
     }
 
-    // 3. EDITORIAL TRANSLATIONS
+    // 3. TRANSLATIONS
     let lang = 'ar';
 
     const translations = {
@@ -721,8 +743,8 @@
         heroDesc: "عجينةٌ هشّة مخبوزة بالزبدة والسمن النقي، محشوة بأجود أنواع خلاص القصيم ومكللة بحبات الفستق الحلبي والترافل المذهب. صمّم بوكس إهدائك الفاخر بدقة أو اختر من مجموعاتنا الجاهزة.",
         heroBtnBuilder: "صمّم صينية الإهداء الخاصة",
         heroBtnMenu: "استكشف الكتالوج الكامل",
-        metricReview: "تقييم خرائط Google",
-        metricDates: "خلاص القصيم الفاخر",
+        metricReview: "خرائط Google",
+        metricDates: "خلاص القصيم",
         metricSupport: "خدمة مباشرة",
         heroCardTitle: "صينية القصور الملكية المشكلة",
         heroCardDesc: "توليفة حصرية من معمول التمر المنقوش، أوراق الفستق المقرمشة، وترافل الشوكولاتة الفاخرة.",
@@ -764,7 +786,7 @@
         reviewPraise1: '"أفضل معمول هش ولذيذ بالتمر والفستق في بريدة، التقديم يرفع الراس في كل مناسبة."',
         reviewPraise2: '"تغليف البوكسات فخم جداً ومناسب للإهداءات الرسمية وحفلات الأعياد."',
         btnOpenMap: "عرض الموقع والتقييمات على Google Maps",
-        btnHoursWhatsApp: "استفسار المواعيد واللوكيشن عبر واتساب",
+        btnHoursWhatsApp: "استفسار المواعيد عبر واتساب",
         mapCardStoreName: "معمول - الفرع الرئيسي (بريدة)",
         hoursTitle: "أوقات العمل واستقبال الطلبات",
         timezoneNote: "توقيت السعودية (KSA)",
@@ -772,6 +794,8 @@
         chatWithStore: "تواصل مع الفرع مباشرة",
         openNow: "مفتوح الآن لاستقبالكم",
         closedNow: "مغلق حالياً",
+        mobileViewCart: "السلة",
+        mobileWhatsApp: "واتساب",
         cartTitle: "سلة المشتريات",
         cartNotes: "ملاحظات التوصيل أو وقت الاستلام:",
         cartNotesPh: "مثال: الاستلام الساعة 5 مساءً في بريدة...",
@@ -784,7 +808,7 @@
       },
       en: {
         topBarReview: "on Google Maps • Haute Hospitality Rating",
-        topBarDelivery: "✨ Buraydah Flagship Pickup • Temperature-Controlled Express Delivery Across KSA",
+        topBarDelivery: "✨ Buraydah Flagship Pickup • Express Delivery Across KSA",
         brandTitle: "Ma'amoul",
         brandSubtitle: "Haute Confectionery & Gifts",
         navHome: "Home",
@@ -797,8 +821,8 @@
         heroDesc: "Melt-in-mouth pastries enriched with artisanal butter and golden Qassim dates, finished with Aleppo pistachios and gilded chocolate truffles. Curate your bespoke presentation tray or browse our ready edits.",
         heroBtnBuilder: "Curate Bespoke Gifting Tray",
         heroBtnMenu: "Explore Full Menu",
-        metricReview: "Google Maps Rating",
-        metricDates: "Select Kholas Dates",
+        metricReview: "Google Maps",
+        metricDates: "Qassim Dates",
         metricSupport: "Concierge Service",
         heroCardTitle: "Imperial Hospitality Pastry Platter",
         heroCardDesc: "A masterwork assortment of crimped date ma'amoul, pistachio leaves, and gourmet date sweets.",
@@ -840,7 +864,7 @@
         reviewPraise1: '"The most delicate date and pistachio ma\'amoul in Buraydah. A truly prestigious presentation."',
         reviewPraise2: '"Impeccable gift packaging, suited for high-level celebrations and VIP gifting."',
         btnOpenMap: "View Boutique & Reviews on Google Maps",
-        btnHoursWhatsApp: "Inquire Hours & Location via WhatsApp",
+        btnHoursWhatsApp: "Inquire Hours via WhatsApp",
         mapCardStoreName: "Ma'amoul - Flagship Store (Buraydah)",
         hoursTitle: "Boutique Hours & Order Inquiries",
         timezoneNote: "Saudi Arabia Time (KSA)",
@@ -848,6 +872,8 @@
         chatWithStore: "Direct Store Concierge",
         openNow: "Open Now for Visitors",
         closedNow: "Currently Closed",
+        mobileViewCart: "Cart",
+        mobileWhatsApp: "WhatsApp",
         cartTitle: "Your Shopping Cart",
         cartNotes: "Delivery notes or pickup timing:",
         cartNotesPh: "e.g., Pickup at 5 PM in Buraydah...",
@@ -860,7 +886,7 @@
       }
     };
 
-    // 4. PRECISE PRODUCT DATA WITH EXACT 6 IMAGES & NAMES
+    // 4. PRODUCT DATA WITH EXACT 6 PHOTOGRAPHS
     const pastries = [
       { id: 'p1', nameAr: "معمول التمر المنقوش التراثي", nameEn: "Traditional Hand-Crimped Date Ma'amoul", tagAr: 'خلاص القصيم', tagEn: 'Qassim Dates', img: 'ror4.jpg' },
       { id: 'p2', nameAr: "معمول بتلات الفستق والتمر", nameEn: "Leaf-Crimped & Pistachio Ma'amoul", tagAr: 'فستق حلبي', tagEn: 'Green Pistachio', img: 'معمول2.jpg' },
@@ -944,7 +970,7 @@
     let builderCounts = {};
     let cart = [];
 
-    // 6. LANGUAGE & DYNAMIC STATUS CONTROLLER
+    // 6. CONTROLLER
     function toggleLanguage() {
       lang = lang === 'ar' ? 'en' : 'ar';
       applyLang();
@@ -985,7 +1011,7 @@
       lucide.createIcons();
     }
 
-    // 7. RENDER OPERATING HOURS & LIVE STATUS
+    // 7. STATUS & SCHEDULE
     function renderLiveStatus() {
       const status = getStoreStatus();
       const statusBadge = document.getElementById('liveStatusBadge');
@@ -993,17 +1019,17 @@
 
       if (status.isOpen) {
         const text = translations[lang].openNow;
-        statusBadge.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-emerald-50 text-emerald-800 border border-emerald-200";
+        statusBadge.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-50 text-emerald-800 border border-emerald-200";
         statusBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span><span>🟢 ${text}</span>`;
         
-        topPill.className = "hidden sm:inline-flex items-center gap-1 bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded-full text-[10px] font-bold";
+        topPill.className = "hidden lg:inline-flex items-center gap-1 bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded-full text-[10px] font-bold";
         topPill.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ${text}`;
       } else {
         const text = translations[lang].closedNow;
-        statusBadge.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-stone-100 text-stone-700 border border-stone-300";
+        statusBadge.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-stone-100 text-stone-700 border border-stone-300";
         statusBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-stone-400"></span><span>⚪ ${text}</span>`;
 
-        topPill.className = "hidden sm:inline-flex items-center gap-1 bg-stone-900 text-stone-400 border border-stone-700 px-2 py-0.5 rounded-full text-[10px] font-bold";
+        topPill.className = "hidden lg:inline-flex items-center gap-1 bg-stone-900 text-stone-400 border border-stone-700 px-2 py-0.5 rounded-full text-[10px] font-bold";
         topPill.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-stone-500"></span> ${text}`;
       }
     }
@@ -1011,8 +1037,6 @@
     function renderScheduleDisplay() {
       const listContainer = document.getElementById('scheduleDisplayList');
       const status = getStoreStatus();
-
-      // Wed (3), Thu (4), Fri (5), Sat (6), Sun (0), Mon (1), Tue (2)
       const order = [3, 4, 5, 6, 0, 1, 2];
 
       listContainer.innerHTML = order.map(dayIdx => {
@@ -1033,7 +1057,7 @@
       }).join('');
     }
 
-    // 8. BUILDER FUNCTIONS
+    // 8. BUILDER LOGIC
     function selectTier(cap, price, nameAr, nameEn) {
       activeTier = { capacity: cap, price: price, nameAr: nameAr, nameEn: nameEn };
       builderCounts = {};
@@ -1090,21 +1114,21 @@
         const tag = lang === 'ar' ? p.tagAr : p.tagEn;
 
         return `
-          <div class="flex items-center justify-between p-3 rounded-2xl bg-stone-50 border border-stone-200 hover:border-stone-300 transition-colors">
-            <div class="flex items-center gap-2.5">
-              <img src="${p.img}" alt="${name}" class="w-11 h-11 rounded-xl object-cover border border-stone-200 shadow-sm shrink-0" />
-              <div>
-                <h4 class="text-xs font-extrabold text-stone-900 line-clamp-1">${name}</h4>
+          <div class="flex items-center justify-between p-2.5 sm:p-3 rounded-2xl bg-stone-50 border border-stone-200 hover:border-stone-300 transition-colors">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <img src="${p.img}" alt="${name}" class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl object-cover border border-stone-200 shadow-sm shrink-0" />
+              <div class="min-w-0">
+                <h4 class="text-xs font-extrabold text-stone-900 truncate">${name}</h4>
                 <span class="text-[10px] text-brand-gold font-bold block">${tag}</span>
               </div>
             </div>
             
             <div class="flex items-center gap-1.5 shrink-0">
-              <button onclick="modifyItemCount('${p.id}', -1)" class="w-7 h-7 rounded-lg bg-white border border-stone-300 text-stone-800 hover:bg-stone-100 flex items-center justify-center font-black text-xs transition-colors">
+              <button onclick="modifyItemCount('${p.id}', -1)" class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white border border-stone-300 text-stone-800 active:bg-stone-100 flex items-center justify-center font-black text-xs transition-colors">
                 -
               </button>
               <span class="w-5 text-center font-bold text-xs font-sans">${count}</span>
-              <button onclick="modifyItemCount('${p.id}', 1)" class="w-7 h-7 rounded-lg bg-brand-obsidian text-white hover:bg-brand-gold hover:text-stone-950 flex items-center justify-center font-black text-xs transition-colors">
+              <button onclick="modifyItemCount('${p.id}', 1)" class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-obsidian text-white active:bg-brand-gold active:text-stone-950 flex items-center justify-center font-black text-xs transition-colors">
                 +
               </button>
             </div>
@@ -1120,7 +1144,7 @@
       const entries = Object.entries(builderCounts);
 
       if (entries.length === 0) {
-        list.innerHTML = `<p class="text-stone-400 italic text-center py-4">${translations[lang].emptyBoxMsg}</p>`;
+        list.innerHTML = `<p class="text-stone-400 italic text-center py-3">${translations[lang].emptyBoxMsg}</p>`;
         return;
       }
 
@@ -1128,12 +1152,12 @@
         const p = pastries.find(item => item.id === id);
         const name = lang === 'ar' ? p.nameAr : p.nameEn;
         return `
-          <div class="flex justify-between items-center py-1.5 border-b border-stone-100">
-            <div class="flex items-center gap-2">
-              <img src="${p.img}" alt="${name}" class="w-6 h-6 rounded object-cover" />
-              <span class="text-stone-800 font-medium">${name}</span>
+          <div class="flex justify-between items-center py-1 border-b border-stone-100">
+            <div class="flex items-center gap-2 min-w-0">
+              <img src="${p.img}" alt="${name}" class="w-5 h-5 rounded object-cover shrink-0" />
+              <span class="text-stone-800 font-medium truncate">${name}</span>
             </div>
-            <span class="font-black font-sans text-brand-burgundy">× ${qty}</span>
+            <span class="font-black font-sans text-brand-burgundy shrink-0">× ${qty}</span>
           </div>
         `;
       }).join('');
@@ -1183,7 +1207,7 @@
       });
     }
 
-    // 9. CATALOGUE GRID RENDERING (WITH EXACT 6 PHOTOS)
+    // 9. CATALOGUE GRID
     function renderCatalogueGrid(items) {
       const grid = document.getElementById('catalogueGrid');
       grid.innerHTML = items.map(p => {
@@ -1193,32 +1217,30 @@
         return `
           <div class="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
             
-            <!-- Real Product Photography -->
-            <div class="h-52 overflow-hidden relative bg-stone-100">
-              <img src="${p.img}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <span class="absolute top-3 right-3 bg-brand-obsidian/90 backdrop-blur-sm text-brand-goldLight text-[10px] font-extrabold px-3 py-1 rounded-full font-sans border border-brand-gold/20 shadow">
+            <div class="h-48 sm:h-52 overflow-hidden relative bg-stone-100">
+              <img src="${p.img}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <span class="absolute top-3 right-3 bg-brand-obsidian/90 backdrop-blur-sm text-brand-goldLight text-[10px] font-extrabold px-2.5 py-0.5 rounded-full font-sans border border-brand-gold/20 shadow">
                 ${p.badge}
               </span>
             </div>
 
-            <!-- Product Card Details -->
-            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3.5">
               <div>
-                <h3 class="font-extrabold text-stone-900 text-base leading-snug">${name}</h3>
+                <h3 class="font-extrabold text-stone-900 text-sm sm:text-base leading-snug">${name}</h3>
                 <p class="text-stone-500 text-xs mt-1.5 leading-relaxed line-clamp-2">${desc}</p>
               </div>
 
               <div class="pt-3 border-t border-stone-100 flex items-center justify-between">
                 <div>
                   <span class="text-[10px] text-stone-400 block font-bold">${lang === 'ar' ? 'السعر' : 'Price'}</span>
-                  <span class="text-lg font-black text-stone-900 font-sans">${p.price} <span class="text-xs font-arabic font-normal">${translations[lang].currency}</span></span>
+                  <span class="text-base sm:text-lg font-black text-stone-900 font-sans">${p.price} <span class="text-xs font-arabic font-normal">${translations[lang].currency}</span></span>
                 </div>
                 
                 <div class="flex items-center gap-1.5">
-                  <button onclick="addToCartSingle(${p.id})" class="p-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 transition-colors" title="${translations[lang].btnAddCart}">
+                  <button onclick="addToCartSingle(${p.id})" class="p-2 sm:p-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 active:scale-95 transition-all" title="${translations[lang].btnAddCart}">
                     <i data-lucide="plus" class="w-4 h-4"></i>
                   </button>
-                  <button onclick="instantBuy(${p.id})" class="inline-flex items-center gap-1.5 bg-stone-900 hover:bg-brand-gold text-white hover:text-stone-950 text-xs font-extrabold px-3.5 py-2.5 rounded-xl transition-colors">
+                  <button onclick="instantBuy(${p.id})" class="inline-flex items-center gap-1 bg-stone-900 hover:bg-brand-gold text-white hover:text-stone-950 text-xs font-extrabold px-3 py-2 sm:px-3.5 sm:py-2 rounded-xl active:scale-95 transition-all">
                     <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
                     <span>${translations[lang].btnBuyNow}</span>
                   </button>
@@ -1249,7 +1271,7 @@
       }
     }
 
-    // 10. CART & CHECKOUT ENGINE
+    // 10. CART ENGINE
     function addToCartSingle(id) {
       const prod = catalogue.find(p => p.id === id);
       if (!prod) return;
@@ -1309,13 +1331,17 @@
       const count = cart.reduce((acc, item) => acc + item.qty, 0);
       const badge = document.getElementById('cartBadge');
       const countEl = document.getElementById('cartDrawerCount');
+      const mobileBadge = document.getElementById('mobileCartCount');
 
       if (count > 0) {
         badge.textContent = count;
         badge.classList.remove('hidden');
+        mobileBadge.textContent = count;
+        mobileBadge.classList.remove('hidden');
         countEl.textContent = count;
       } else {
         badge.classList.add('hidden');
+        mobileBadge.classList.add('hidden');
         countEl.textContent = '0';
       }
 
@@ -1362,23 +1388,23 @@
         return `
           <div class="p-3 bg-white rounded-2xl border border-stone-200 shadow-sm space-y-2">
             <div class="flex justify-between items-start gap-2">
-              <div class="flex items-center gap-2">
-                ${item.img ? `<img src="${item.img}" alt="${name}" class="w-10 h-10 rounded-lg object-cover border border-stone-200 shrink-0" />` : ''}
-                <div>
-                  <h4 class="font-bold text-xs text-stone-900">${name}</h4>
+              <div class="flex items-center gap-2 min-w-0">
+                ${item.img ? `<img src="${item.img}" alt="${name}" class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg object-cover border border-stone-200 shrink-0" />` : ''}
+                <div class="min-w-0">
+                  <h4 class="font-bold text-xs text-stone-900 truncate">${name}</h4>
                   <span class="text-[11px] text-brand-gold font-sans font-bold">${item.price} ${translations[lang].currency}</span>
                 </div>
               </div>
-              <button onclick="removeCartItem('${item.cartId}')" class="text-stone-300 hover:text-red-600 transition-colors p-1">
+              <button onclick="removeCartItem('${item.cartId}')" class="text-stone-300 hover:text-red-600 transition-colors p-1 shrink-0">
                 <i data-lucide="trash-2" class="w-4 h-4"></i>
               </button>
             </div>
             ${extraDetails}
             <div class="flex justify-between items-center pt-1">
-              <div class="flex items-center gap-2">
-                <button onclick="adjustQty('${item.cartId}', -1)" class="w-6 h-6 rounded bg-stone-100 text-stone-700 flex items-center justify-center font-black text-xs">-</button>
-                <span class="text-xs font-bold font-sans">${item.qty}</span>
-                <button onclick="adjustQty('${item.cartId}', 1)" class="w-6 h-6 rounded bg-brand-obsidian text-white flex items-center justify-center font-black text-xs">+</button>
+              <div class="flex items-center gap-1.5">
+                <button onclick="adjustQty('${item.cartId}', -1)" class="w-6 h-6 rounded bg-stone-100 text-stone-700 flex items-center justify-center font-black text-xs active:bg-stone-200">-</button>
+                <span class="text-xs font-bold font-sans w-4 text-center">${item.qty}</span>
+                <button onclick="adjustQty('${item.cartId}', 1)" class="w-6 h-6 rounded bg-brand-obsidian text-white flex items-center justify-center font-black text-xs active:bg-stone-800">+</button>
               </div>
               <span class="font-black text-xs font-sans text-stone-900">${itemSum} ${translations[lang].currency}</span>
             </div>
